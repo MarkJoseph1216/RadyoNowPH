@@ -1,19 +1,25 @@
 package com.radyopilipinomediagroup.radyonow.ui.login
 
-class LoginPresenter(var view: LoginActivity) : LoginActivity.Presenter {
+import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
+
+class LoginPresenter(var view: LoginActivity) : AbstractPresenter<LoginActivity>(view) {
 
 
-    override fun doLogin(username: String, password: String) {
+    fun doLogin(username: String, password: String, result: AbstractPresenter.ResultHandler) {
         if(username.isNullOrEmpty() && password.isNullOrEmpty())
-            view.onError("Username and Password is empty")
+            result.onError("Username and Password is empty")
         else
         {
             if(username == "radyouser" && password == "123456789"){
-                view.onSuccess("Login Successful")
+                result.onSuccess("Login Successful")
             }else{
-                view.onError("Username and Password is incorrect.")
+                result.onError("Username and Password is incorrect.")
             }
         }
+    }
+
+    interface View : AbstractPresenter.AbstractView {
+
     }
 
 }

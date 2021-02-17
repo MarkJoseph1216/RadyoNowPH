@@ -8,10 +8,13 @@
 
     <ImageView
         android:id="@+id/imageLogin"
+        android:src="@drawable/ic_login"
+        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="330dp" />
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageLogin"
@@ -31,6 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Please Login to Continue or Sign up if you do not have an account yet."
             android:textSize="15sp"
+            android:layout_marginTop="5dp"
             android:textStyle="bold" />
 
         <TextView
@@ -46,6 +50,10 @@
             android:id="@+id/userEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/edit_text_bg_corner_5dp"
+            android:padding="10dp"
+
             android:hint="Enter Email" />
 
         <TextView
@@ -62,6 +70,9 @@
             android:id="@+id/userPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:padding="10dp"
+            android:background="@drawable/edit_text_bg_corner_5dp"
             android:hint="Enter Password"
             android:inputType="textPassword" />
 

@@ -11,7 +11,7 @@ abstract class AbstractPresenter<E : AbstractPresenter.ContextView<*>>(view:E) w
     private var repositories : Repositories? = null
     private var sessionManager : SessionManager? = null
 
-    interface View{
+    interface ResultHandler{
         fun onSuccess(message : String)
         fun onError(message: String)
     }

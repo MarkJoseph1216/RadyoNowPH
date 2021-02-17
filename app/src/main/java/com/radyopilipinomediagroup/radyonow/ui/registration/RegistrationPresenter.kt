@@ -4,10 +4,13 @@ import com.google.gson.Gson
 import com.radyopilipinomediagroup.radyonow.model.RegistrationModel
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 
-class RegistrationPresenter(var view : AbstractPresenter.View) : RegistrationActivity.Presenter {
+class RegistrationPresenter(var view : RegistrationActivity) : AbstractPresenter<RegistrationActivity>(view) {
 
-    override fun onRegister(userRegDetails: RegistrationModel) {
-        view.onSuccess(Gson().toJson(userRegDetails))
+    fun onRegister(userRegDetails: RegistrationModel, result : AbstractPresenter.ResultHandler) {
+        result.onSuccess(Gson().toJson(userRegDetails))
     }
 
+    interface View : AbstractPresenter.AbstractView{
+
+    }
 }

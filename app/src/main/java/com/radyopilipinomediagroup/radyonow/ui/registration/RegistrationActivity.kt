@@ -1,5 +1,6 @@
 package com.radyopilipinomediagroup.radyonow.ui.registration
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,8 @@ import com.radyopilipinomediagroup.radyonow.R
 import com.radyopilipinomediagroup.radyonow.model.RegistrationModel
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 
-class RegistrationActivity : AppCompatActivity(), AbstractPresenter.View{
+class RegistrationActivity : AppCompatActivity(), AbstractPresenter.AbstractView,
+    AbstractPresenter.ContextView<RegistrationActivity>{
 
     private var email : EditText? = null
     private var firstName : EditText? = null
@@ -62,20 +64,27 @@ class RegistrationActivity : AppCompatActivity(), AbstractPresenter.View{
                     region?.text.toString(),
                     password?.text.toString(),
                     userRegister?.text.toString()
-                )
+                ), object:AbstractPresenter.ResultHandler{
+                    override fun onSuccess(message: String) {
+                        Log.d("Registration", message)
+                    }
+                    override fun onError(message: String) {
+                        Log.d("Registration_err", message)
+                    }
+                }
             )
         }
     }
 
-    override fun onSuccess(message: String) {
-        Log.d("Register_data", message)
+    override fun activity(): RegistrationActivity {
+        TODO("Not yet implemented")
     }
 
-    override fun onError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    override fun context(): Context {
+        TODO("Not yet implemented")
     }
 
-    interface Presenter{
-        fun onRegister(userRegDetails : RegistrationModel)
+    override fun applicationContext(): Context {
+        TODO("Not yet implemented")
     }
 }

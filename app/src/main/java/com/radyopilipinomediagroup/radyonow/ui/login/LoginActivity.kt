@@ -12,7 +12,7 @@ import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyonow.ui.registration.RegistrationActivity
 import com.radyopilipinomediagroup.radyonow.utils.Services
 
-class LoginActivity : AppCompatActivity(), AbstractPresenter.View,
+class LoginActivity : AppCompatActivity(), AbstractPresenter.AbstractView,
     AbstractPresenter.ContextView<LoginActivity> {
 
     private var userEmail : EditText? = null
@@ -38,23 +38,18 @@ class LoginActivity : AppCompatActivity(), AbstractPresenter.View,
 
     private fun initListener(){
         userLogin?.setOnClickListener {
-            presenter?.doLogin(userEmail?.text.toString(), userPassword?.text.toString())
+            presenter?.doLogin(userEmail?.text.toString(), userPassword?.text.toString(), object:AbstractPresenter.ResultHandler{
+                override fun onSuccess(message: String) {
+                    Toast.makeText(this@LoginActivity, "Success", Toast.LENGTH_SHORT).show()
+                }
+                override fun onError(message: String) {
+                    Toast.makeText(this@LoginActivity, "Failed", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
         toRegister?.setOnClickListener {
             Services.nextIntent(this, RegistrationActivity::class.java)
         }
-    }
-
-    override fun onSuccess(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    interface Presenter{
-        fun doLogin(username : String, password : String);
     }
 
     override fun activity(): LoginActivity {
