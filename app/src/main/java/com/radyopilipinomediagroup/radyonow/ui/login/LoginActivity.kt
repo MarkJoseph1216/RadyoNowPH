@@ -12,7 +12,7 @@ import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyonow.ui.registration.RegistrationActivity
 import com.radyopilipinomediagroup.radyonow.utils.Services
 
-class LoginActivity : AppCompatActivity(), AbstractPresenter.View,
+class LoginActivity : AppCompatActivity(), LoginPresenter.View,
     AbstractPresenter.ContextView<LoginActivity> {
 
     private var userEmail : EditText? = null
@@ -45,13 +45,13 @@ class LoginActivity : AppCompatActivity(), AbstractPresenter.View,
         }
     }
 
-    override fun onSuccess(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+//    override fun onSuccess(message: String) {
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
+//
+//    override fun onError(message: String) {
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
 
     interface Presenter{
         fun doLogin(username : String, password : String);
