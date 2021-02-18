@@ -5,23 +5,25 @@ import android.content.Context
 import com.radyopilipinomediagroup.radyonow.local.SessionManager
 import com.radyopilipinomediagroup.radyonow.repositories.Repositories
 
-abstract class AbstractPresenter<E : AbstractPresenter.ContextView<*>>(view:E) where E : AbstractPresenter.AbstractView {
+abstract class AbstractPresenter<E>(view:E) where E : AbstractPresenter.ContextView<*>, E : AbstractPresenter.AbstractView {
 
-    private var view: E? = null
-    private var repositories : Repositories? = null
-    private var sessionManager : SessionManager? = null
+    var getView: E? = null
+        protected set
+    var getRepositories : Repositories? = null
+        protected set
+    var getSessionManager : SessionManager? = null
+        protected set
+
+    init{
+        getView = view
+        getRepositories = Repositories()
+        getSessionManager = SessionManager(view.applicationContext())
+    }
 
     interface ResultHandler{
         fun onSuccess(message : String)
         fun onError(message: String)
     }
-
-    init{
-        this.view = view
-        repositories = Repositories(view.applicationContext())
-        sessionManager = SessionManager(view.applicationContext())
-    }
-
     interface AbstractView
     interface ContextView<T : Activity> {
         fun activity():T

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextTheme">
+        <item name="android:background">@drawable/edit_text_bg_corner_5dp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

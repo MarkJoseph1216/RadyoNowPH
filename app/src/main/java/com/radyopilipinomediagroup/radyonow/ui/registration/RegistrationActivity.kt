@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -11,9 +12,11 @@ import android.widget.Toast
 import com.radyopilipinomediagroup.radyonow.R
 import com.radyopilipinomediagroup.radyonow.model.RegistrationModel
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
+import com.radyopilipinomediagroup.radyonow.ui.login.LoginActivity
+import com.radyopilipinomediagroup.radyonow.utils.Services
 
-class RegistrationActivity : AppCompatActivity(), AbstractPresenter.AbstractView,
-    AbstractPresenter.ContextView<RegistrationActivity>{
+class RegistrationActivity : AppCompatActivity(), RegistrationPresenter.View,
+    AbstractPresenter.ContextView<RegistrationActivity>, View.OnClickListener{
 
     private var email : EditText? = null
     private var firstName : EditText? = null
@@ -51,40 +54,50 @@ class RegistrationActivity : AppCompatActivity(), AbstractPresenter.AbstractView
     }
 
     private fun initListener() {
-        userRegister?.setOnClickListener {
-            presenter?.onRegister(
-                RegistrationModel(
-                    email?.text.toString(),
-                    firstName?.text.toString(),
-                    lastName?.text.toString(),
-                    bDate?.text.toString(),
-                    age?.text.toString(),
-                    gender?.text.toString(),
-                    city?.text.toString(),
-                    region?.text.toString(),
-                    password?.text.toString(),
-                    userRegister?.text.toString()
-                ), object:AbstractPresenter.ResultHandler{
-                    override fun onSuccess(message: String) {
-                        Log.d("Registration", message)
+        userRegister?.setOnClickListener(this::onClick)
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.userRegister -> {
+                presenter?.onRegister(
+                    RegistrationModel(
+                        email?.text.toString(),
+                        firstName?.text.toString(),
+                        lastName?.text.toString(),
+                        bDate?.text.toString(),
+                        age?.text.toString(),
+                        gender?.text.toString(),
+                        city?.text.toString(),
+                        region?.text.toString(),
+                        password?.text.toString(),
+                        userRegister?.text.toString()
+                    ), object:AbstractPresenter.ResultHandler{
+                        override fun onSuccess(message: String) {
+                            Log.d("Registration", message)
+                        }
+                        override fun onError(message: String) {
+                            Log.d("Registration_err", message)
+                        }
                     }
-                    override fun onError(message: String) {
-                        Log.d("Registration_err", message)
-                    }
-                }
-            )
+                )
+            }
         }
     }
 
+    override fun onBackPressed() {
+        Services.nextIntent(activity(), LoginActivity::class.java)
+    }
+
     override fun activity(): RegistrationActivity {
-        TODO("Not yet implemented")
+        return this
     }
 
     override fun context(): Context {
-        TODO("Not yet implemented")
+        return this
     }
 
     override fun applicationContext(): Context {
-        TODO("Not yet implemented")
+        return applicationContext
     }
 }

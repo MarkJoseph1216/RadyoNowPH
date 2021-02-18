@@ -59,9 +59,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
-                    android:hint="Enter Email"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"
+                    android:hint="Enter Email"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,9 +76,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Enter First Name"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,9 +93,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Enter Last Name"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,9 +110,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:padding="10dp"
+                    style="@style/EditTextTheme"
                     android:textSize="14sp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="MM/DD/YYYY" />
 
                 <TextView
@@ -132,9 +128,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Enter Age"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,9 +145,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Gender"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -168,9 +162,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="City"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -186,9 +179,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Region"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -204,9 +196,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Enter Password"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -222,9 +213,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
-                    android:background="@drawable/edit_text_bg_corner_5dp"
                     android:hint="Confirm Password"
-                    android:padding="10dp" />
+                    style="@style/EditTextTheme"/>
 
                 <Button
                     android:id="@+id/userRegister"

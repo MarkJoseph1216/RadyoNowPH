@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
@@ -11,7 +15,7 @@
         android:src="@drawable/ic_login"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
-        android:layout_height="330dp" />
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_marginTop="10dp"
@@ -51,9 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:background="@drawable/edit_text_bg_corner_5dp"
-            android:padding="10dp"
-
+            style="@style/EditTextTheme"
             android:hint="Enter Email" />
 
         <TextView
@@ -71,8 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
-            android:padding="10dp"
-            android:background="@drawable/edit_text_bg_corner_5dp"
+            style="@style/EditTextTheme"
             android:hint="Enter Password"
             android:inputType="textPassword" />
 
@@ -124,3 +125,4 @@
     </LinearLayout>
 
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
