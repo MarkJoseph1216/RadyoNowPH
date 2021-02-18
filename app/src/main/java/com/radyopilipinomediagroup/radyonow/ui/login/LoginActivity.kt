@@ -13,6 +13,7 @@ import com.radyopilipinomediagroup.radyonow.ui.registration.RegistrationActivity
 import com.radyopilipinomediagroup.radyonow.utils.Services
 
 class LoginActivity : AppCompatActivity(), AbstractPresenter.AbstractView,
+
     AbstractPresenter.ContextView<LoginActivity> {
 
     private var userEmail : EditText? = null
@@ -52,16 +53,8 @@ class LoginActivity : AppCompatActivity(), AbstractPresenter.AbstractView,
         }
     }
 
-    override fun activity(): LoginActivity {
-        return this
-    }
-
-    override fun context(): Context {
-        return this
-    }
-
-    override fun applicationContext(): Context {
-        return applicationContext
+    interface Presenter{
+        fun doLogin(username : String, password : String);
     }
 }
 
