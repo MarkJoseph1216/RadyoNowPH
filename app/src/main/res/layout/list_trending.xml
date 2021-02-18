@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/profilePic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_login"
+        app:civ_border="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/profilePic"
+        android:layout_alignBottom="@id/profilePic"
+        android:layout_toRightOf="@id/profilePic"
+        android:gravity="center"
+        android:paddingStart="5dp"
+        android:paddingLeft="5dp">
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile Name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/postTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileName"
+            android:text="Hace 20 min" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:layout_alignTop="@id/profilePic"
+        android:layout_alignBottom="@id/profilePic"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="20dp"
+            android:src="@drawable/ic_share"
+            app:tint="@color/black"
+            android:layout_marginRight="10dp"
+            android:layout_height="20dp"/>
+        <ImageView
+            android:id="@+id/download"
+            android:layout_width="20dp"
+            android:src="@drawable/ic_share"
+            android:layout_height="20dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/postThumb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profilePic"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_signup"/>
+    <TextView
+        android:id="@+id/postTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/postThumb"
+        android:text="Title - Singer"
+        android:layout_marginTop="8dp"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

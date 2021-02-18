@@ -6,7 +6,7 @@ import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 
 class LoginPresenter(var view: LoginActivity) : AbstractPresenter<LoginActivity>(view) {
 
-    var userLogin : LoginModel? = getRepositories?.getLogin()
+    private var userLogin : LoginModel? = getRepositories?.getLogin()
 
 
     fun doLogin(username: String, password: String, result: AbstractPresenter.ResultHandler) {

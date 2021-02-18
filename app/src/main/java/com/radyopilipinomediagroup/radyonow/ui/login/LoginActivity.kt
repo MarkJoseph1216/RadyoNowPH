@@ -31,16 +31,16 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View,
     }
 
     private fun initDeclaration() {
-        presenter = LoginPresenter(this)
         userEmail = findViewById(R.id.userEmail)
         userPassword = findViewById(R.id.userPassword)
         userLogin  = findViewById(R.id.userLogin)
         toRegister = findViewById(R.id.toRegister)
+        presenter = LoginPresenter(activity())
     }
 
     private fun initListener(){
-        userLogin?.setOnClickListener(this::onClick)
-        toRegister?.setOnClickListener(this::onClick)
+        userLogin?.setOnClickListener(activity()::onClick)
+        toRegister?.setOnClickListener(activity()::onClick)
     }
 
     override fun onClick(v: View?) {
@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View,
                     }
                 })
             }
-            R.id.toRegister -> Services.nextIntent(this, RegistrationActivity::class.java)
+            R.id.toRegister -> Services.nextIntent(activity(), RegistrationActivity::class.java)
         }
     }
 

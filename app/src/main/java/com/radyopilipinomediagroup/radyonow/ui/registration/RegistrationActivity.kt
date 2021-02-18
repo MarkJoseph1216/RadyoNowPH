@@ -50,11 +50,11 @@ class RegistrationActivity : AppCompatActivity(), RegistrationPresenter.View,
         password = findViewById(R.id.password)
         confirmPassword = findViewById(R.id.confirmPassword)
         userRegister = findViewById(R.id.userRegister)
-        presenter = RegistrationPresenter(this)
+        presenter = RegistrationPresenter(activity())
     }
 
     private fun initListener() {
-        userRegister?.setOnClickListener(this::onClick)
+        userRegister?.setOnClickListener(activity()::onClick)
     }
 
     override fun onClick(v: View?) {
