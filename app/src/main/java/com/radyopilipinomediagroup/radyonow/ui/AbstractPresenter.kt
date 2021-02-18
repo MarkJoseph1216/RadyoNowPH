@@ -10,9 +10,10 @@ abstract class AbstractPresenter<E>(protected var view: E) where E : AbstractPre
     private var repositories : Repositories? = null
     private var sessionManager : SessionManager? = null
 
+    interface ResultHandler{
+        fun onSuccess(message : String)
     interface OnResultListener{
         fun onSuccess(message: String)
-        fun onError(message: String)
     }
 
     init{
