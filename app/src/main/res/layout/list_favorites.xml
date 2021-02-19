@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/faveThumb"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_signup"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/faveTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/faveThumb"
+        android:text="Fave Item Title"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/faveSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/faveThumb"
+        android:layout_below="@id/faveTitle"
+        android:text="Fave Item Title"
+        android:textSize="12sp"
+        android:layout_marginHorizontal="10dp"/>
+    <TextView
+        android:id="@+id/faveRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/faveThumb"
+        android:text="7.07"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_alignBottom="@+id/faveThumb"
+        android:layout_marginHorizontal="10dp"/>
+
+    <ImageView
+        android:id="@+id/otherOption"
+        android:layout_width="20dp"
+        android:src="@drawable/ic_share"
+        app:tint="@color/black"
+        android:layout_alignParentRight="true"
+        android:layout_height="20dp"/>
+
+
+</RelativeLayout>

@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.radyopilipinomediagroup.radyonow.R
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
-import com.radyopilipinomediagroup.radyonow.ui.dashboard.DashboardActivity
+import com.radyopilipinomediagroup.radyonow.ui.dashboard.home.HomeActivity
 import com.radyopilipinomediagroup.radyonow.ui.registration.RegistrationActivity
 import com.radyopilipinomediagroup.radyonow.utils.Services
 
@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View,
                 presenter?.doLogin(userEmail?.text.toString(), userPassword?.text.toString(), object:AbstractPresenter.ResultHandler{
                     override fun onSuccess(message: String) {
                         Toast.makeText(context(), message, Toast.LENGTH_SHORT).show()
-                        Services.nextIntent(activity(), DashboardActivity::class.java)
+                        Services.nextIntent(activity(), HomeActivity::class.java)
                     }
                     override fun onError(message: String) {
                         Toast.makeText(context(), message, Toast.LENGTH_SHORT).show()

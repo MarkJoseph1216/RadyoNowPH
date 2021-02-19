@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RadyoNow">
-        <activity android:name=".ui.dashboard.DashboardActivity"></activity>
+        <activity android:name=".ui.dashboard.favorites.FavoritesActivity"></activity>
+        <activity android:name=".ui.dashboard.home.HomeActivity" />
         <activity android:name=".ui.registration.RegistrationActivity" />
         <activity android:name=".ui.login.LoginActivity">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.radyopilipinomediagroup.radyonow.ui.dashboard
+package com.radyopilipinomediagroup.radyonow.ui.dashboard.home
 
 import android.content.Context
 import android.view.LayoutInflater

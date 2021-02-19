@@ -1,4 +1,4 @@
-package com.radyopilipinomediagroup.radyonow.ui.dashboard
+package com.radyopilipinomediagroup.radyonow.ui.dashboard.home
 
 
 import android.widget.LinearLayout
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 
-class DashboardPresenter(val view : DashboardActivity): AbstractPresenter<DashboardActivity>(view) {
+class HomePresenter(val view : HomeActivity): AbstractPresenter<HomeActivity>(view) {
 
     private var posts = getRepositories?.getTrending()
     private var featured = getRepositories?.getFeatured()
