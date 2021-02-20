@@ -2,11 +2,12 @@ package com.radyopilipinomediagroup.radyonow.ui.dashboard.home
 
 
 import android.widget.LinearLayout
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 
-class HomePresenter(val view : HomeActivity): AbstractPresenter<HomeActivity>(view) {
+class HomePresenter(val view : HomeFragment): AbstractPresenter<HomeFragment>(view) {
 
     private var posts = getRepositories?.getTrending()
     private var featured = getRepositories?.getFeatured()
@@ -29,9 +30,9 @@ class HomePresenter(val view : HomeActivity): AbstractPresenter<HomeActivity>(vi
         view.getTrendingRecycler()?.adapter = trendingAdapter
     }
 
-    interface View : AbstractPresenter.AbstractView{
-        fun getFeaturedRecycler() : RecyclerView?
-        fun getTrendingRecycler() : RecyclerView?
-        fun getFeaturedContainer() : LinearLayout?
+    interface View : AbstractPresenter. AbstractView{
+        fun getFeaturedRecycler() : RecyclerView
+        fun getTrendingRecycler() : RecyclerView
+        fun getFeaturedContainer() : LinearLayout
     }
 }

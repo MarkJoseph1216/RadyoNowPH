@@ -40,6 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/faveThumb"
         android:text="7.07"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:layout_alignBottom="@+id/faveThumb"

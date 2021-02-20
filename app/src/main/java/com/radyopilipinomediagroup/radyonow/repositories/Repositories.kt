@@ -1,6 +1,7 @@
 package com.radyopilipinomediagroup.radyonow.repositories
 
 import android.content.Context
+import com.radyopilipinomediagroup.radyonow.model.FavoritesModel
 import com.radyopilipinomediagroup.radyonow.model.LoginModel
 import com.radyopilipinomediagroup.radyonow.model.PostModel
 import java.util.ArrayList
@@ -27,5 +28,15 @@ class Repositories {
         featured += ""
         featured += ""
         return featured
+    }
+
+    fun getFavorites() : List<FavoritesModel> {
+        val favorites : MutableList<FavoritesModel> = mutableListOf()
+        favorites += FavoritesModel("", "Title One", "Subtitle One","7.99")
+        favorites += FavoritesModel("", "Title Two", "Subtitle Two","7.98")
+        favorites += FavoritesModel("", "Title Three", "Subtitle Three","7.97")
+        favorites += FavoritesModel("", "Title Four", "Subtitle Four","7.96")
+        favorites += FavoritesModel("", "Title Five", "Subtitle Five","7.95")
+        return favorites
     }
 }
