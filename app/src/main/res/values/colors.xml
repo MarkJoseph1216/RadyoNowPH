@@ -10,5 +10,6 @@
     <color name="red">#FF941A20</color>
     <color name="emeraldGreen">#FF04753D</color>
     <color name="lightGray">#EEEEEE</color>
+    <color name="gray">#818181</color>
 
 </resources>

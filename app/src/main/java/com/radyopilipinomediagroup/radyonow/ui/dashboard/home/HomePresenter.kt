@@ -10,7 +10,7 @@ import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 class HomePresenter(val view : HomeFragment): AbstractPresenter<HomeFragment>(view) {
 
     private var posts = getRepositories?.getTrending()
-    private var featured = getRepositories?.getFeatured()
+    private var featured = getRepositories?.getTrending()
     private var llmHorizontal = LinearLayoutManager(view.context(),LinearLayoutManager.HORIZONTAL,false)
     private var llm = LinearLayoutManager(view.context())
     private var circleHeadAdapter = CircleHeadAdapter(view.context(), featured!!)

@@ -1,4 +1,4 @@
-package com.radyopilipinomediagroup.radyonow.ui.dashboard.favorites
+package com.radyopilipinomediagroup.radyonow.ui
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.radyopilipinomediagroup.radyonow.R
 import com.radyopilipinomediagroup.radyonow.model.FavoritesModel
 
-class FavoritesAdapter(var context : Context, var favorites : List<FavoritesModel>) : RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
+class StreamListAdapter(var context : Context, var favorites : List<FavoritesModel>) : RecyclerView.Adapter<StreamListAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var faveThumb : ImageView = itemView.findViewById(R.id.faveThumb)
@@ -20,14 +20,13 @@ class FavoritesAdapter(var context : Context, var favorites : List<FavoritesMode
         var faveRating : TextView = itemView.findViewById(R.id.faveRating)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.list_favorites, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: FavoritesAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val fave = favorites[position]
-
         Glide.with(context)
             .load(fave.faveThumb)
             .centerCrop()
@@ -36,8 +35,6 @@ class FavoritesAdapter(var context : Context, var favorites : List<FavoritesMode
         holder.faveTitle.text = fave.faveTitle
         holder.faveSubtitle.text = fave.faveSubtitle
         holder.faveRating.text = fave.faveRating
-
-
     }
 
     override fun getItemCount(): Int {

@@ -11,6 +11,8 @@ import com.radyopilipinomediagroup.radyonow.R
 import com.radyopilipinomediagroup.radyonow.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyonow.ui.dashboard.favorites.FavoritesFragment
 import com.radyopilipinomediagroup.radyonow.ui.dashboard.home.HomeFragment
+import com.radyopilipinomediagroup.radyonow.ui.dashboard.playlist.PlaylistFragment
+import com.radyopilipinomediagroup.radyonow.ui.dashboard.profile.ProfileFragment
 
 class DashboardActivity : AppCompatActivity(), AbstractPresenter.ContextView<DashboardActivity>, DashboardPresenter.View{
 
@@ -22,7 +24,6 @@ class DashboardActivity : AppCompatActivity(), AbstractPresenter.ContextView<Das
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
         initInitialize()
-        initListener()
         initMain()
     }
 
@@ -31,32 +32,39 @@ class DashboardActivity : AppCompatActivity(), AbstractPresenter.ContextView<Das
         bottomNavigation = findViewById(R.id.bottomNavigation)
     }
 
+    private fun initMain() {
+        setSupportActionBar(toolbar)
+        initListener()
+        bottomNavigation?.selectedItemId = R.id.home
+    }
+
     private fun initListener() {
         fragmentManager = this.supportFragmentManager
-
         bottomNavigation?.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.home ->{
-                    val homeFragment = HomeFragment()
-                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, homeFragment, "HomeFragment").commit()
+                    supportActionBar?.title = "Home"
+                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, HomeFragment(), "HomeFragment").commit()
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.favorites -> {
-                    val favoriteFragment = FavoritesFragment()
-                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, favoriteFragment, "FavoritesFragment").commit()
-                    return@setOnNavigationItemSelectedListener true}
-                R.id.playlists -> { return@setOnNavigationItemSelectedListener true}
-                R.id.profile -> { return@setOnNavigationItemSelectedListener true}
+                    supportActionBar?.title = "Favourites"
+                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, FavoritesFragment(), "FavoritesFragment").commit()
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.playlists -> {
+                    supportActionBar?.title = "Playlists"
+                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, PlaylistFragment(), "PlaylistFragment").commit()
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.profile -> {
+                    supportActionBar?.title = "Profile"
+                    fragmentManager?.beginTransaction()!!.replace(R.id.dashboardFrame, ProfileFragment(), "ProfileFragment").commit()
+                    return@setOnNavigationItemSelectedListener true
+                }
                 else ->  return@setOnNavigationItemSelectedListener false
             }
         }
-    }
-
-    private fun initMain() {
-        setSupportActionBar(toolbar)
-        actionBar?.title = "Home"
-        bottomNavigation?.selectedItemId = R.id.home
-
     }
 
     override fun activity(): DashboardActivity {

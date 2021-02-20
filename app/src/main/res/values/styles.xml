@@ -3,5 +3,21 @@
     <style name="EditTextTheme">
         <item name="android:background">@drawable/edit_text_bg_corner_5dp</item>
         <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
+
+    <style name="rounded10dp">
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+    </style>
+
+    <style name="rounded20dp">
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+    </style>
+
+    <style name="poppins_regular">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
 </resources>
