@@ -23,13 +23,7 @@ abstract class AbstractPresenter<E>(view:E) where E : AbstractPresenter.ContextV
 
     interface ResultHandler{
         fun onSuccess(message : String)
-        fun onError(message: String)
+    interface OnResultListener{
+        fun onSuccess(message: String)
     }
-    interface AbstractView
-    interface ContextView<T : Activity> {
-        fun activity():T
-        fun context(): Context
-        fun applicationContext():Context
-    }
-
 }

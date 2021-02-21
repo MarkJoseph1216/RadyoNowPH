@@ -60,17 +60,7 @@ class LoginActivity : AppCompatActivity(), LoginPresenter.View,
         }
     }
 
-    override fun activity(): LoginActivity {
-        return this
+    interface Presenter{
+        fun doLogin(username : String, password : String);
     }
-
-    override fun context(): Context {
-        return this
-    }
-
-    override fun applicationContext(): Context {
-        return applicationContext
-    }
-
 }
-
