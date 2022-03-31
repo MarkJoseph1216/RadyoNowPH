@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.supercharge.shimmerlayout.ShimmerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    android:id="@+id/shimmerLayoutAllPlayList"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    app:shimmer_animation_duration="1200">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <RelativeLayout
+                android:id="@+id/faveThumbContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faveThumb"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:elevation="8dp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/rounded10dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/faveTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer"
+                android:layout_toRightOf="@id/faveThumbContainer"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/faveSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/faveTitle"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer"
+                android:layout_toRightOf="@id/faveThumbContainer"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/faveRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/faveThumbContainer"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer"
+                android:layout_toRightOf="@id/faveThumbContainer"
+                android:text="7.07"
+                android:textColor="@color/lightGray"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/otherOption"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_options"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <RelativeLayout
+                android:id="@+id/faveThumbContainer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faveThumb2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:elevation="8dp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/rounded10dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/faveTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer2"
+                android:layout_toRightOf="@id/faveThumbContainer2"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/faveSubtitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/faveTitle2"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer2"
+                android:layout_toRightOf="@id/faveThumbContainer2"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/faveRating2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/faveThumbContainer2"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer2"
+                android:layout_toRightOf="@id/faveThumbContainer2"
+                android:text="7.07"
+                android:textColor="@color/lightGray"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/otherOption2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_options"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <RelativeLayout
+                android:id="@+id/faveThumbContainer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faveThumb3"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:elevation="8dp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/rounded10dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/faveTitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer3"
+                android:layout_toRightOf="@id/faveThumbContainer3"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/faveSubtitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/faveTitle3"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer3"
+                android:layout_toRightOf="@id/faveThumbContainer3"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/faveRating3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/faveThumbContainer3"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer3"
+                android:layout_toRightOf="@id/faveThumbContainer3"
+                android:text="7.07"
+                android:textColor="@color/lightGray"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/otherOption3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_options"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <RelativeLayout
+                android:id="@+id/faveThumbContainer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/faveThumb4"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:elevation="8dp"
+                    app:cardBackgroundColor="@color/lightGray"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/rounded10dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/faveTitle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer4"
+                android:layout_toRightOf="@id/faveThumbContainer4"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/faveSubtitle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/faveTitle4"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer4"
+                android:layout_toRightOf="@id/faveThumbContainer4"
+                android:text="Loading..."
+                android:textColor="@color/lightGray"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/faveRating4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/faveThumbContainer4"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toEndOf="@id/faveThumbContainer4"
+                android:layout_toRightOf="@id/faveThumbContainer4"
+                android:text="7.07"
+                android:textColor="@color/lightGray"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/otherOption4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_options"
+                app:tint="@color/lightGray" />
+        </RelativeLayout>
+    </LinearLayout>
+</io.supercharge.shimmerlayout.ShimmerLayout>

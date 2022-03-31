@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.programs.ProgramsFragment">
+
+    <ProgressBar
+        android:id="@+id/programLoading"
+        android:indeterminateTint="@color/red"
+        android:layout_centerInParent="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/programsRecyclerContainer"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/programsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/noPrograms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:lineSpacingMultiplier="0"
+        android:lineSpacingExtra="20sp"
+        android:text="Programs\nComing Soon!"
+        android:textColor="@color/gray"
+        android:drawableTint="@color/gray"
+        app:drawableTopCompat="@drawable/ic_programs" />
+</RelativeLayout>

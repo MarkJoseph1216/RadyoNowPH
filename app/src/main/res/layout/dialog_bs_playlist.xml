@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bs_playlist"
+    android:orientation="vertical"
+    android:background="@color/darkGray"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="20dp"
+    android:elevation="20dp"
+    android:paddingTop="10dp"
+    app:behavior_peekHeight="0dp"
+    app:behavior_hideable="true"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add video to..."
+        android:textColor="@color/white"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/createPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Playlist"
+        android:layout_marginLeft="6dp"
+        android:drawableLeft="@drawable/ic_plus_square_15dp"
+        android:gravity="center_vertical"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/lightGreen"
+        style="@style/gotham_medium"
+        android:textColor="@color/lightGreen"
+        android:layout_marginBottom="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/playlistRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"/>
+
+    <Button
+        android:id="@+id/donePlaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/lightGreen"
+        android:layout_marginHorizontal="15dp"
+        android:text="Done"
+        style="@style/gotham_medium"
+        android:textAllCaps="false"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>

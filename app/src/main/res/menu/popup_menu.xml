@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/addToPlaylist"
+        android:title="@string/add_to_playlist"
+        android:icon="@drawable/ic_add"/>
+    <item
+        android:id="@+id/like"
+        android:title="@string/like"
+        android:icon="@drawable/ic_favorite_no_outline_icon_gray"/>
+    <item
+        android:id="@+id/shareContent"
+        android:icon="@drawable/ic_share_24"
+        android:title="@string/share"
+        android:visible="true" />
+</menu>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.dashboard.comments.CommentFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/layoutBottom"
+        android:id="@+id/recyclerComments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imgProfile"
+            android:src="@drawable/ic_radyo_icon"
+            android:foreground="@drawable/fg_circular_green"
+            android:scaleType="fitCenter"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+
+        <EditText
+            android:id="@+id/edtComment"
+            android:layout_gravity="center"
+            android:hint="Add a comment..."
+            android:paddingLeft="15dp"
+            android:layout_marginLeft="6dp"
+            android:textSize="13dp"
+            android:fontFamily="@font/century_gothic_regular"
+            android:background="@drawable/bg_round_gray"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="43dp"/>
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/ic_send_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/noContent"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_heart_shaded"
+                android:layout_marginBottom="25dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Want to add comments?"
+                android:textSize="18dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginBottom="13dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Let us hear your thoughts by adding a\ncomment below."
+                android:textSize="12dp"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/montserrat_light"
+                android:layout_marginBottom="39dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingComments"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/red"
+        android:layout_width="35dp"
+        android:layout_height="35dp"/>
+</RelativeLayout>

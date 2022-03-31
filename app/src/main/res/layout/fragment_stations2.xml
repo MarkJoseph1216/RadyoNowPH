@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.dashboard.stations.StationsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/stationsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <io.supercharge.shimmerlayout.ShimmerLayout
+                    android:layout_marginTop="14dp"
+                    android:id="@+id/shimmerLayoutTrendStationsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    app:shimmer_animation_duration="1200">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_toRightOf="@+id/relativeShimmer1"
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:elevation="12dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp">
+
+                            <androidx.cardview.widget.CardView
+                                app:cardCornerRadius="10dp"
+                                app:cardBackgroundColor="@color/lightGray"
+                                android:id="@+id/stationLogo"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="center"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_marginRight="10dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/stationLogo2"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="4dp"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_toRightOf="@+id/relativeShimmer1"
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:elevation="12dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp">
+
+                            <androidx.cardview.widget.CardView
+                                app:cardCornerRadius="10dp"
+                                app:cardBackgroundColor="@color/lightGray"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="center"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_marginRight="10dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="4dp"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_toRightOf="@+id/relativeShimmer1"
+                            android:layout_width="fill_parent"
+                            android:layout_weight="1"
+                            android:elevation="12dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:padding="5dp">
+
+                            <androidx.cardview.widget.CardView
+                                app:cardCornerRadius="10dp"
+                                app:cardBackgroundColor="@color/lightGray"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="10dp"
+                                android:scaleType="center"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_marginRight="10dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="4dp"
+                                android:scaleType="center"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="10dp"
+                                app:shapeAppearanceOverlay="@style/rounded10dp"
+                                app:srcCompat="@drawable/ic_login" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </io.supercharge.shimmerlayout.ShimmerLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    android:id="@+id/stationsRecycler"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/noInternet"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_no_internet"
+            android:text="Can't connect to the server.\nPlease check your internet connection\nbefore refreshing the page."
+            android:drawableTint="@color/gray"
+            android:textColor="@color/gray"
+            android:textSize="12dp"/>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">RadyoNow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="menu_drawer_open">Open menu drawer</string>
+    <string name="menu_drawer_close">Close menu drawer</string>
+
+    <string name="youtube_access_token">AIzaSyDKzNp4TylB9cHPi-EYjSwKYo8mf9ARe6A</string>
+    <string name="channel_access_id">UCSguV2QCwO2hTsjEbHNDu2w</string>
+    <string name="facebook_app_id">250773609954561</string>
+    <string name="fb_login_protocol_scheme">fb250773609954561</string>
+    <string name="not_a_member_yet_signup">Not a member yet? ${status_running}</string>
+    <string name="status_running"><font fgcolor='#FF4CD964'>Signup</font></string>
+    <string name="rate_your_experience">RATE YOUR EXPERIENCE WITH RADIO PILIPINO</string>
+    <string name="enter_your_reviews">Let us know your feedback.</string>
+    <string name="send">SEND</string>
+    <string name="reviews">Reviews</string>
+    <string name="aral_tarlakhenyo">Loading...</string>
+    <string name="Date">loading...</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="enter_old_password">Enter Old Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="station_list">| Station List</string>
+    <string name="station_name">Station Name</string>
+    <string name="streaming_now">Streaming Now</string>
+    <string name="channel_station">Loading....</string>
+    <string name="login">Login</string>
+    <string name="share">Share</string>
+    <string name="add_to_playlist">Add to playlist</string>
+    <string name="terms_and_conditions_signup">Terms and Conditions</string>
+    <string name="terms_terms_content_signup">Your privacy matters to us. By clicking Agree, you hereby authorize RadyoNow and all of its legal, accredited, and existing subsidiaries and partners entitled to access your personal information for the sole purpose of making your experience with this app more efficient. RadyoNow and all of its legal, accredited, subsidiaries and partner entities are committed to providing exemplary customer service that does not hinge on the misuse of your personal information.</string>
+    <string name="data_protection_act_2020">Data Protection Act 2020</string>
+    <string name="terms_data_content_signup">Republic <b>Act</b> No.10173, otherwise known as the <b>Data Privacy Act</b> is a law that seeks to protect all forms of information, be it private, personal, or sensitive. It is meant to cover both natural and juridical persons involved in the processing of personal information. RadyoNow hereby swears that our user’s personal data is extracted only within a professional capacity, that of which is used to better provide a better experience for the user.</string>
+    <string name="terms_cookie_content_signup">Cookie Clauses for Privacy Policy We collect data in order to improve your journey with us. By clicking “Accept,” you’re authorizing us to enable our cookies to make your experience with RadyoNow better.</string>
+    <string name="live_bullet">\u2022</string>
+    <string name="signup_message">To complete your signup process, please open the confirmation email that we just sent, and click the link.</string>
+    <string name="thank_you_for_signing_up">Thank you for signing up!</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="cd_repeat">Repeat one or all</string>
+    <string name="cd_previous">Skip backwards</string>
+    <string name="cd_play">Play and pause</string>
+    <string name="cd_next">Skip forwards</string>
+    <string name="dummy_album_name">dummy album name</string>
+    <string name="dummy_artist_name">dummy artist name</string>
+    <string name="dummy_track_name">dummy track name</string>
+    <string name="like">Like</string>
+    <string name="playlist_empty_text">Tap the option button next to a program you like, and select "Add to Playlist"</string>
+    <string name="favorites_empty_text">Tap the option button next to a program you like, and select "Add to Favorites"</string>
+    <string name="terms_add_birthdate">I have read and accept the<font color='#B9282F'> Terms &amp; Conditions</font></string>
+    <string name="favorites">Add to favorites</string>
+</resources>

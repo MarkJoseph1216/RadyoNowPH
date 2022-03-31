@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPic"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="15dp"
+        app:cardCornerRadius="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/fg_circular_heads">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/circularPic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_login"
+                app:civ_border_width="6dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stationButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="15dp"
+        android:layout_alignBottom="@+id/cardPic"
+        android:layout_marginBottom="-15dp"
+        android:layout_centerInParent="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_down_arrow"
+            android:rotation="-90"
+            android:layout_marginBottom="10dp"/>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

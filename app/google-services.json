@@ -1,0 +1,153 @@
+{
+  "project_info": {
+    "project_number": "285059153295",
+    "firebase_url": "https://radyonow-1613484473550-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "radyonow-1613484473550",
+    "storage_bucket": "radyonow-1613484473550.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285059153295:android:a111cf4976cec3525fdffa",
+        "android_client_info": {
+          "package_name": "com.radyopilipinomediagroup.radyo_now"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285059153295-194cnb7v984f1uco8ve32rgukvpprmt3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyo_now",
+            "certificate_hash": "5e9d1459f4f17afc869e4aef9e98d9d6e5918247"
+          }
+        },
+        {
+          "client_id": "285059153295-53blmdob16pav2l04fqa8f8es3tovs4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyo_now",
+            "certificate_hash": "bc3d37f54911aaaeb60f3d6d9dee429cde445d83"
+          }
+        },
+        {
+          "client_id": "285059153295-5oeavpnv1frjks01d9eknrm536p14776.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyo_now",
+            "certificate_hash": "0cfa3831d9539b29c6a5283507e648c4f8fa21e4"
+          }
+        },
+        {
+          "client_id": "285059153295-desthk2t6t6l8s2dd41knpueqdi6aum6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyo_now",
+            "certificate_hash": "ea5c39b262bd00379da69a37251aef2682dd0c57"
+          }
+        },
+        {
+          "client_id": "285059153295-hkckco61ipmf9oill08e09iuma0v96rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA18GzCPctQv5j5dDucWs3j2e4f3-VImiM"
+        },
+        {
+          "current_key": "AIzaSyB--Khn4RWXrz0BQApJzYEzIrkrX5NDty8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285059153295-hau2jqekkeqac4vsltgqddl57549uj0o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "285059153295-4ec675plsdma3mru789k59cuote84vml.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.radyopilipinomediagroup.radyonow"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285059153295:android:012eb67261564b655fdffa",
+        "android_client_info": {
+          "package_name": "com.radyopilipinomediagroup.radyonow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285059153295-59vik1pqb27ejbc6e8mfpt5a0ink99kf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyonow",
+            "certificate_hash": "bc3d37f54911aaaeb60f3d6d9dee429cde445d83"
+          }
+        },
+        {
+          "client_id": "285059153295-dgv4n6q4ovtdovsnkc96fbo6pvfg8vfj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyonow",
+            "certificate_hash": "8f3a415b3182a887653b360b7db63dd06f0c6eab"
+          }
+        },
+        {
+          "client_id": "285059153295-h7i6b2pgthkbs4l0hghkr9uoh6vrqt9f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyonow",
+            "certificate_hash": "ea5c39b262bd00379da69a37251aef2682dd0c57"
+          }
+        },
+        {
+          "client_id": "285059153295-vn8cfhhs242m3kb8lt3hlm6g3nad5srn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.radyopilipinomediagroup.radyonow",
+            "certificate_hash": "c6eb77e09c9a19b4361398fdcd540b1232152821"
+          }
+        },
+        {
+          "client_id": "285059153295-hkckco61ipmf9oill08e09iuma0v96rm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA18GzCPctQv5j5dDucWs3j2e4f3-VImiM"
+        },
+        {
+          "current_key": "AIzaSyB--Khn4RWXrz0BQApJzYEzIrkrX5NDty8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285059153295-hau2jqekkeqac4vsltgqddl57549uj0o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "285059153295-4ec675plsdma3mru789k59cuote84vml.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.radyopilipinomediagroup.radyonow"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

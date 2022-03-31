@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.stations.channel.ChannelFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/channelLogo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitCenter"
+                    app:shapeAppearanceOverlay="@style/rounded10dp" />
+
+                <ImageButton
+                    android:visibility="gone"
+                    android:id="@+id/btnPlayAudio"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/ic_play_logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <LinearLayout
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/btnPlayAudio"
+                    android:id="@+id/channelNameContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/channelLogo"
+                    android:layout_alignBottom="@id/channelLogo"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/channelLogo"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/channelName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:textColor="@color/black"
+                        android:maxLines="2"
+                        android:lineSpacingMultiplier="0"
+                        android:lineSpacingExtra="22dp"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/channelSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:textColor="#737373"
+                        android:maxLines="2"
+                        android:lineSpacingMultiplier="1.3"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignTop="@+id/channelNameContainer"
+                    android:layout_toRightOf="@id/channelNameContainer"
+                    android:src="@drawable/ic_music_notes"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/channelDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/channelLogo"
+                    android:textColor="#545454"
+                    android:layout_toLeftOf="@+id/dropdown"
+                    android:layout_marginLeft="20dp"
+                    android:textColorLink="@color/darkBlue"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="@font/gotham_book"
+                    android:layout_marginTop="20dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="Loading..."
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/dropdown"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/channelDetails"
+                    android:layout_alignBottom="@id/channelDetails"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="centerCrop"
+                    android:rotation="180"
+                    android:src="@drawable/ic_down_arrow_solid"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/channelDescription"
+                    android:lineSpacingMultiplier="1.3"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/gotham_book"
+                    android:textColor="#545454"
+                    android:textColorLink="@color/darkBlue"
+                    android:layout_marginBottom="-10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/channelDetails"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/imgBannerAds"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_below="@+id/channelDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/liveContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:id="@+id/layoutLiveHolder"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="•"
+                                android:fontFamily="@font/metropolis_bold"
+                                android:textColor="#d30000"
+                                android:textSize="40dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:fontFamily="@font/metropolis_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Live"
+                                android:layout_marginLeft="3dp"
+                                android:textColor="#d30000"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:layout_marginHorizontal="15dp"
+                                android:id="@+id/channelLiveRecycler"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/channelDescription"
+                                android:nestedScrollingEnabled="false"
+                                android:scrollbars="none"
+                                android:overScrollMode="never"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/noLiveText"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:background="@color/black"
+                            android:text="Next Program Will Be Live Soon!"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:layout_marginHorizontal="20dp"
+                            android:visibility="gone"
+                            android:textSize="17dp"
+                            android:fontFamily="@font/metropolis_medium"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/programContainer"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:text="Programs"
+                            android:textColor="#d30000"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/channelPlaylistRecycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:nestedScrollingEnabled="false"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+
+
+</RelativeLayout>

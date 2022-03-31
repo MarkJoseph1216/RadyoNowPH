@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainContainer"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp">
+        <TextView
+            android:id="@+id/contentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:lines="2"
+            android:fontFamily="@font/metropolis_bold"
+            android:text="Content Title"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@+id/contentDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contentTitle"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="Content Description"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@+id/contentDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/contentDesc"
+            android:layout_marginBottom="10dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:fontFamily="@font/gotham_bold"
+            android:textColor="@color/gray"
+            android:text="Content Date"
+            android:textSize="10dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/contentDate"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressLoading"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="50dp"
+        android:indeterminateTint="@color/red"
+        android:layout_gravity="center"
+        android:paddingVertical="10dp"/>
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_notification">
+
+    <ImageView
+        android:id="@+id/status_bar_album_art"
+        android:layout_width="@dimen/status_bar_album_art"
+        android:layout_height="@dimen/status_bar_album_art"
+        android:visibility="gone"
+        android:gravity="center"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/status_bar_icon"
+        android:layout_width="@dimen/status_bar_album_art"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_radyo_icon"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/status_bar_icon"
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/layoutControls"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/status_bar_button_info_container_padding_left"
+        android:paddingStart="@dimen/status_bar_button_info_container_padding_left">
+
+        <TextView
+            android:fontFamily="@font/gotham_medium"
+            android:id="@+id/status_bar_track_name"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:text="Channel Name"/>
+
+        <TextView
+            android:fontFamily="@font/gotham_medium"
+            android:id="@+id/status_bar_artist_date"
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Channel Date"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/layoutControls"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/status_bar_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_baseline_play_circle_outline_24"
+            android:contentDescription="@string/cd_play"
+            android:layout_gravity="center_vertical" />
+
+        <ImageView
+            android:id="@+id/status_bar_pause"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_white_pause_circle_outline_24"
+            android:contentDescription="@string/cd_play"
+            android:layout_gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/status_bar_next"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/cd_next"
+            android:background="@drawable/ic_fast_forward_24"
+            android:layout_gravity="center_vertical" />
+
+        <ImageButton
+            android:id="@+id/status_bar_collapse"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/ic_close_icon"
+            android:layout_gravity="center_vertical"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+</RelativeLayout>

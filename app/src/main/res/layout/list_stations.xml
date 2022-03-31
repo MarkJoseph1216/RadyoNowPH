@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/stationLogo"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                app:shapeAppearanceOverlay="@style/roundedAll10dp"
+                app:srcCompat="@drawable/ic_login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+            <!--    app:shapeAppearanceOverlay="@style/rounded10dp"-->
+            <!--    android:foreground="@drawable/bg_opposite_corner_border_white"-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/stationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageContainer"
+            android:layout_alignStart="@id/imageContainer"
+            android:layout_alignEnd="@id/imageContainer"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:fontFamily="@font/century_gothic_bold"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.08"
+            android:maxLines="2"
+            android:text="Station Name"
+            android:textColor="@color/black"
+            android:textSize="10.3dp" />
+        <!--    android:shadowColor="@color/black"-->
+        <!--    android:shadowDx="4"-->
+        <!--    android:shadowDy="4"-->
+        <!--    android:shadowRadius="5"-->
+    </RelativeLayout>
+</LinearLayout>

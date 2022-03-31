@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.dashboard.home.HomeFragment">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshType="smartisan">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <io.supercharge.shimmerlayout.ShimmerLayout
+                        android:id="@+id/shimmerFeaturedContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:shimmer_animation_duration="1200">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="15dp"
+                            android:weightSum="1">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".333"
+                                android:paddingVertical="12dp"
+                                android:paddingHorizontal="15dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginBottom="12.5dp"
+                                    android:src="@drawable/ic_signup"
+                                    app:cardCornerRadius="100dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="H,1:1"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingHorizontal="5dp"
+                                    android:paddingTop="3dp"
+                                    android:scaleType="fitCenter"
+                                    app:cardBackgroundColor="@color/lightGray"
+                                    app:cardCornerRadius="12.5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".333"
+                                android:paddingVertical="12dp"
+                                android:paddingHorizontal="15dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginBottom="12.5dp"
+                                    android:src="@drawable/ic_signup"
+                                    app:cardCornerRadius="100dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="H,1:1"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingHorizontal="5dp"
+                                    android:paddingTop="3dp"
+                                    android:scaleType="fitCenter"
+                                    app:cardBackgroundColor="@color/lightGray"
+                                    app:cardCornerRadius="12.5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".333"
+                                android:paddingVertical="12dp"
+                                android:paddingHorizontal="15dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_marginBottom="12.5dp"
+                                    android:src="@drawable/ic_signup"
+                                    app:cardCornerRadius="100dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintDimensionRatio="H,1:1"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingHorizontal="5dp"
+                                    android:paddingTop="3dp"
+                                    android:scaleType="fitCenter"
+                                    app:cardBackgroundColor="@color/lightGray"
+                                    app:cardCornerRadius="12.5dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+                    <LinearLayout
+                        android:id="@+id/featuredContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="15dp"
+                        android:visibility="visible"
+                        android:weightSum="1">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:visibility="gone"
+                            android:id="@+id/featuredOneContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".333"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="15dp">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/featuredOne"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="12.5dp"
+                                android:foreground="@drawable/fg_circular_heads"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/stationOne"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:background="@drawable/bg_circular_red"
+                                android:paddingHorizontal="5dp"
+                                android:paddingTop="3dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_down_arrow_50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:tint="@color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:visibility="gone"
+                            android:id="@+id/featuredTwoContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".333"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="15dp">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/featuredTwo"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="12.5dp"
+                                android:foreground="@drawable/fg_circular_heads"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/stationTwo"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:background="@drawable/bg_circular_red"
+                                android:paddingHorizontal="5dp"
+                                android:paddingTop="3dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_down_arrow_50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:tint="@color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:visibility="gone"
+                            android:id="@+id/featuredThreeContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".333"
+                            android:paddingVertical="12dp"
+                            android:paddingHorizontal="15dp">
+
+                            <com.mikhaellopez.circularimageview.CircularImageView
+                                android:id="@+id/featuredThree"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="12.5dp"
+                                android:foreground="@drawable/fg_circular_heads"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintDimensionRatio="H,1:1"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/stationThree"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:background="@drawable/bg_circular_red"
+                                android:paddingHorizontal="5dp"
+                                android:paddingTop="3dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_down_arrow_50dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:tint="@color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    app:adSize="SMART_BANNER"
+                    app:adUnitId="ca-app-pub-9050161445260315/4012909117" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/sample_ads"
+                    android:visibility="gone" />
+
+
+                <!--            <com.google.android.gms.ads.AdView-->
+                <!--                android:id="@+id/adView"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="bottom"-->
+                <!--                android:layout_marginTop="10dp"-->
+                <!--                app:adSize="BANNER"-->
+                <!--                app:adUnitId="ca-app-pub-3940256099942544/6300978111" />-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <io.supercharge.shimmerlayout.ShimmerLayout
+                        android:id="@+id/shimmerLayoutPlayList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:shimmer_animation_duration="1200">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_playlist_20dp"
+                                    app:tint="@color/lightGray" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Playlists"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginVertical="10dp">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/playlistThumb"
+                                    android:layout_width="111dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginBottom="10sp"
+                                    android:background="@color/lightGray"
+                                    android:scaleType="centerCrop"
+                                    app:cardCornerRadius="8dp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignTop="@+id/playlistThumb"
+                                    android:layout_alignEnd="@+id/playlistThumb"
+                                    android:layout_alignRight="@+id/playlistThumb"
+                                    android:layout_margin="5dp"
+                                    android:visibility="visible"
+                                    app:cardBackgroundColor="@color/lightGray"
+                                    app:cardCornerRadius="3dp">
+
+                                    <TextView
+                                        android:id="@+id/playlistItems"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="3dp"
+                                        android:background="@color/lightGray"
+                                        android:gravity="center"
+                                        android:padding="3dp"
+                                        android:text="1 item"
+                                        android:textColor="@color/lightGray"
+                                        android:textSize="10sp" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:id="@+id/playlistName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/playlistThumb"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@color/lightGray"
+                                    android:text="Unknown Playlists"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="12dp" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+
+                    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+                    <LinearLayout
+                        android:id="@+id/playlistContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/playlistBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/playlistIcon"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:layout_width="28dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_playlist_icon_red"
+                                    app:tint="@color/red" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Playlists"
+                                    android:textColor="@color/red"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/playlistCreate"
+                                android:visibility="gone"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="20dp"
+                                android:layout_marginTop="6dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginRight="3dp"
+                                    android:src="@drawable/ic_plus_sign"
+                                    app:tint="@color/red" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="10dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Playlist"
+                                    android:layout_marginRight="10dp"
+                                    android:textColor="@color/red"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:animateLayoutChanges="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardCreatePlayList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginRight="20dp"
+                                android:visibility="gone"
+                                app:cardBackgroundColor="@color/mediumGray"
+                                app:cardCornerRadius="10dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_marginVertical="28dp"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="Create your first playlist here."
+                                        android:textColor="@color/white"
+                                        android:fontFamily="@font/montserrat_bold"
+                                        android:textSize="16dp" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:orientation="horizontal"
+                                android:layout_height="wrap_content">
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/playlistRecycler"
+                                    android:layout_width="match_parent"
+                                    android:layout_centerInParent="true"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    />
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:scrollbars="none"-->
+<!--                                android:nestedScrollingEnabled="false"-->
+<!--                                android:overScrollMode="never"-->
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutSliderAds"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="15dp"
+                        android:id="@+id/sliderIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:dotsColor="@color/lightGray"
+                        app:dotsCornerRadius="8dp"
+                        app:dotsSize="10dp"
+                        app:dotsSpacing="4dp"
+                        app:dotsWidthFactor="2.5"
+                        app:selectedDotColor="@color/white"
+                        app:progressMode="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/trendingRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:visibility="gone" />
+
+                    <io.supercharge.shimmerlayout.ShimmerLayout
+                        android:id="@+id/shimmerLayoutTrendList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        app:shimmer_animation_duration="1200">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/profilePic"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                app:cardBackgroundColor="@color/lightGray"
+                                app:cardCornerRadius="40dp"
+                                app:civ_border="true"
+                                app:civ_border_width="3dp" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/profilePic"
+                                android:layout_alignBottom="@id/profilePic"
+                                android:layout_toRightOf="@id/profilePic"
+                                android:gravity="center"
+                                android:paddingStart="5dp"
+                                android:paddingLeft="5dp">
+
+
+                                <TextView
+                                    android:id="@+id/profileName"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/lightGray"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/postTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/profileName"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@color/lightGray"
+                                    android:text="Loading..."
+                                    android:textColor="@color/lightGray" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/profilePic"
+                                android:layout_alignBottom="@id/profilePic"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/share"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@drawable/ic_share"
+                                    android:backgroundTint="@color/lightGray"
+                                    android:padding="3dp"
+                                    app:tint="@color/black" />
+
+                                <ImageView
+                                    android:id="@+id/download"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/ic_options_horizontal"
+                                    android:backgroundTint="@color/lightGray"
+                                    android:padding="3dp" />
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/postThumb"
+                                android:layout_width="match_parent"
+                                android:layout_height="240dp"
+                                android:layout_below="@id/profilePic"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/ic_signup"
+                                android:backgroundTint="@color/lightGray"
+                                android:scaleType="centerCrop" />
+
+                            <TextView
+                                android:id="@+id/postTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/postThumb"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/lightGray"
+                                android:text="Loading..."
+                                android:textColor="@color/lightGray"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </io.supercharge.shimmerlayout.ShimmerLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.baoyz.widget.PullRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/swipeRefreshLayout"
+        app:layout_anchorGravity="center">
+
+        <TextView
+            android:id="@+id/noInternet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/ic_no_internet"
+            android:drawableTint="@color/gray"
+            android:gravity="center"
+            android:text="Can't connect to the server.\nPlease check your internet connection\nbefore refreshing the page."
+            android:textColor="@color/gray"
+            android:textSize="12dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

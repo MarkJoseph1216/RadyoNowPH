@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.home.playlist.content.PlaylistContentFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/playlistName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="| List"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:visibility="gone"
+                android:textStyle="bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:id="@+id/playlistContentRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+            <include layout="@layout/import_shimmer_allplaylist"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/noContent"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="98dp"
+                android:layout_height="89dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_playlist_icon"
+                android:layout_marginBottom="39dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Want to add to this playlist?"
+                android:textSize="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginBottom="13dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/playlist_empty_text"
+                android:textSize="12dp"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/montserrat_light"
+                android:layout_marginBottom="39dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="39dp"/>
+            <TextView
+                android:id="@+id/browseContent"
+                android:layout_width="251dp"
+                android:layout_height="49dp"
+                android:background="@drawable/bg_rounded_button"
+                android:text="Browse"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/white"
+                android:textSize="18dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

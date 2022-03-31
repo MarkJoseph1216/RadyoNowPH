@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.radyopilipinomediagroup.radyo_now">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.USE_CREDENTIALS"
+        android:maxSdkVersion="22" />
+
+    <application
+        android:name="com.radyopilipinomediagroup.radyo_now.utils.RadyoApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_radyo_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@drawable/ic_radyo_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RadyoNow">
+        <activity android:name="com.radyopilipinomediagroup.radyo_now.ui.account.login.LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="radyonow.com"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.radyopilipinomediagroup.radyo_now.ui.account.addbirthdate.AddBirthDateActivity" />
+        <activity android:name="com.radyopilipinomediagroup.radyo_now.ui.account.changepassword.ChangePasswordActivity" />
+        <activity android:name="com.radyopilipinomediagroup.radyo_now.ui.account.forgotpassword.ForgotPasswordActivity" />
+        <!-- GOOGLE ADS -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9050161445260315~4232347063" /> <!-- GOOGLE ADS -->
+        <!-- com.google.android.gms.ads.APPLICATION_ID -->
+        <!-- FACEBOOK IMPLEMENTATION -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" /> <!-- FACEBOOK IMPLEMENTATION -->
+        <activity android:name="com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardActivity"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|screenLayout|screenSize|smallestScreenSize">
+
+            <intent-filter>
+                <data
+                    android:scheme="radyopilipino" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+
+            <intent-filter
+                android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="radyopilipino.app.link"
+                    android:scheme="https" />
+                <data
+                    android:host="radyopilipino-alternate.app.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="io.branch.referral.InstallListener"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- Set to true to use Branch_Test_Key -->
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="false" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_ng6f8WsX5i4gOA6EzMKMrpdbxvmPA2Eh" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="key_test_kg2iWXtX5e0nHE4vqK6FgdhowweSBYFx" />
+
+        <activity
+            android:name="com.radyopilipinomediagroup.radyo_now.ui.account.registration.RegistrationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.radyopilipinomediagroup.radyo_now.ui.splashscreen.SplashScreen"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:enabled="true" android:name="com.radyopilipinomediagroup.radyo_now.utils.NotificationService" />
+
+        <service android:name="com.radyopilipinomediagroup.radyo_now.utils.FirebaseService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

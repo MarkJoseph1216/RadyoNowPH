@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.home.featured.FeaturedFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/noPrograms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="0"
+            android:lineSpacingExtra="20sp"
+            android:text="Programs\nComing Soon!"
+            android:textColor="@color/gray"
+            app:drawableTopCompat="@drawable/ic_station_gray" />
+
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15">
+
+                        <ImageView
+                            android:id="@+id/stationPrev"
+                            android:layout_width="60dp"
+                            android:layout_height="0dp"
+                            android:padding="10dp"
+                            android:rotation="180"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/red" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_weight=".25">
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/stationLogo"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:foreground="@drawable/fg_circular_heads"
+                            android:src="@drawable/ic_signup"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".15">
+
+                        <ImageView
+                            android:id="@+id/stationNext"
+                            android:layout_width="60dp"
+                            android:layout_height="0dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintDimensionRatio="H,1:1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/red" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/stationLiveContainer"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layoutLiveHolder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="@color/red"
+                            android:textSize="40dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="Live"
+                            android:textColor="@color/red"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/stationLiveRecycler"
+                            android:layout_width="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/noLiveText"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginHorizontal="25dp"
+                        android:text="Next Program Will Be Live Soon!"
+                        android:gravity="center"
+                        android:background="@color/black"
+                        android:textColor="@color/white"
+                        android:textSize="17dp"
+                        android:visibility="gone"
+                        android:fontFamily="@font/metropolis_medium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/stationProgramContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <io.supercharge.shimmerlayout.ShimmerLayout
+                        android:id="@+id/shimmerLayoutProgramList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        app:shimmer_animation_duration="1000">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginVertical="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/programThumbContainer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/programThumb"
+                                        android:layout_width="70dp"
+                                        android:layout_height="60dp"
+                                        android:scaleType="centerCrop"
+                                        app:cardBackgroundColor="@color/lightGray"
+                                        app:cardCornerRadius="8dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/programTitle"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer"
+                                    android:layout_toRightOf="@id/programThumbContainer"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Item Title"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/programDescription"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/programTitle"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer"
+                                    android:layout_toRightOf="@id/programThumbContainer"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Description"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="11sp" />
+
+                                <ImageView
+                                    android:id="@+id/otherOption"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:padding="7dp"
+                                    android:src="@drawable/ic_options"
+                                    app:tint="@color/lightGray" />
+
+                                <ImageView
+                                    android:id="@+id/playProgram"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/otherOption"
+                                    android:background="@drawable/ic_baseline_play_circle_outline_24"
+                                    android:backgroundTint="@color/lightGray" />
+
+                                <CheckBox
+                                    android:id="@+id/programFavorite"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/playProgram"
+                                    android:button="@drawable/selector_checkbox"
+                                    android:buttonTint="@color/lightGray"
+                                    android:gravity="center"
+                                    android:theme="@style/checkBoxStyle"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginVertical="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/programThumbContainer2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/programThumb2"
+                                        android:layout_width="70dp"
+                                        android:layout_height="60dp"
+                                        android:scaleType="centerCrop"
+                                        app:cardBackgroundColor="@color/lightGray"
+                                        app:cardCornerRadius="8dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/programTitle2"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer2"
+                                    android:layout_toRightOf="@id/programThumbContainer2"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Item Title"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/programDescription2"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/programTitle2"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer2"
+                                    android:layout_toRightOf="@id/programThumbContainer2"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Description"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="11sp" />
+
+                                <ImageView
+                                    android:id="@+id/otherOption2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:padding="7dp"
+                                    android:src="@drawable/ic_options"
+                                    app:tint="@color/lightGray" />
+
+                                <ImageView
+                                    android:id="@+id/playProgram2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/otherOption2"
+                                    android:background="@drawable/ic_baseline_play_circle_outline_24"
+                                    android:backgroundTint="@color/lightGray" />
+
+                                <CheckBox
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/playProgram2"
+                                    android:button="@drawable/selector_checkbox"
+                                    android:buttonTint="@color/lightGray"
+                                    android:gravity="center"
+                                    android:theme="@style/checkBoxStyle"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginVertical="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/programThumbContainer3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:id="@+id/programThumb3"
+                                        android:layout_width="70dp"
+                                        android:layout_height="60dp"
+                                        android:scaleType="centerCrop"
+                                        app:cardBackgroundColor="@color/lightGray"
+                                        app:cardCornerRadius="8dp" />
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/programTitle3"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer3"
+                                    android:layout_toRightOf="@id/programThumbContainer3"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Item Title"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/programDescription3"
+                                    android:layout_width="160dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/programTitle3"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_toEndOf="@id/programThumbContainer3"
+                                    android:layout_toRightOf="@id/programThumbContainer3"
+                                    android:ellipsize="end"
+                                    android:lines="1"
+                                    android:text="Program Description"
+                                    android:textColor="@color/lightGray"
+                                    android:textSize="11sp" />
+
+                                <ImageView
+                                    android:id="@+id/otherOption3"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:padding="7dp"
+                                    android:src="@drawable/ic_options"
+                                    app:tint="@color/lightGray" />
+
+                                <ImageView
+                                    android:id="@+id/playProgram3"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/otherOption3"
+                                    android:background="@drawable/ic_baseline_play_circle_outline_24"
+                                    android:backgroundTint="@color/lightGray" />
+
+                                <CheckBox
+                                    style="?android:attr/starStyle"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@id/playProgram3"
+                                    android:button="@drawable/selector_checkbox"
+                                    android:buttonTint="@color/lightGray"
+                                    android:gravity="center"
+                                    android:theme="@style/checkBoxStyle"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </io.supercharge.shimmerlayout.ShimmerLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/stationProgramsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+<!--        </androidx.core.widget.NestedScrollView>-->
+    </RelativeLayout>
+</FrameLayout>

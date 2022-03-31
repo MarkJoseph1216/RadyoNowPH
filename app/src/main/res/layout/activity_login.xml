@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.account.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageLogin"
+        android:src="@drawable/bg_login_header"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="260dp" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageLogin"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please login to continue or sign up if you do not have an account yet."
+            android:textSize="14dp"
+            android:lineSpacingMultiplier="1.3"
+            android:textStyle="bold"
+            style="@style/gotham_light"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:fontFamily="@font/gotham_medium"/>
+
+        <EditText
+            android:id="@+id/userEmail"
+            style="@style/EditTextTheme"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="14dp"
+            android:fontFamily="@font/gotham_light"
+            android:layout_marginTop="12dp"
+            android:hint="@string/enter_email" />
+        <TextView
+            android:id="@+id/emailErr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ErrTextView"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Password"
+            android:fontFamily="@font/gotham_medium"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            app:passwordToggleTint="@color/red"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userPassword"
+                android:textStyle="bold"
+                style="@style/EditTextTheme"
+                android:textSize="14dp"
+                android:fontFamily="@font/gotham_light"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/passwordErr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ErrTextView"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txtForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:fontFamily="@font/gotham_medium"
+            android:layout_marginTop="13dp"
+            android:text="Forgot Password?"
+            android:textSize="13dp" />
+
+        <RelativeLayout
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="15dp"
+            android:paddingVertical="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:fontFamily="@font/gotham_medium"
+                android:id="@+id/userLogin"
+                android:visibility="visible"
+                android:textSize="13dp"
+                android:background="@drawable/bg_rounded_button"
+                android:layout_centerInParent="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/login" />
+
+            <RelativeLayout
+                android:id="@+id/layoutLoading"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_rounded_button"
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:layout_centerInParent="true"
+                    android:id="@+id/loginLoading"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:visibility="visible"
+                    app:indicatorName="BallBeat"
+                    app:indicatorColor="@color/white"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_marginRight="20dp"
+                android:background="@color/gray"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="80dp"
+                android:layout_toLeftOf="@+id/txtOr"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/txtOr"
+                android:layout_centerInParent="true"
+                android:text="Or"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="20dp"
+                android:background="@color/gray"
+                android:layout_marginRight="80dp"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/txtOr"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="21dp"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgFacebook"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ic_facebook_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+
+            <ImageView
+                android:id="@+id/imgGmail"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/ic_gmail_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Not a member yet?"
+                android:fontFamily="@font/gotham_medium"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/txtSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/emeraldGreen"
+                android:text="SIGN UP"
+                android:layout_marginLeft="3dp"
+                android:textSize="14dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/asGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Or login as"
+                android:fontFamily="@font/gotham_medium"
+                android:textSize="14dp"/>
+
+            <TextView
+                android:id="@+id/textGuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/emeraldGreen"
+                android:text="Guest"
+                android:layout_marginLeft="3dp"
+                android:textSize="14dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/red"
+    android:elevation="10dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="8dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/mainToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/toolbarLogo"
+                android:gravity="start|center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/toolbarDrawerIcon"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_baseline_dehaze_24"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"/>
+
+                <ImageView
+                    android:id="@+id/toolbarBack"
+                    android:layout_width="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_back"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="15dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/metropolis_medium"
+                    android:id="@+id/toolbarText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/toolbarBack"
+                    android:gravity="center|start"
+                    android:layout_marginRight="20dp"
+                    android:text="HOME"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:animateLayoutChanges="true"
+                android:visibility="gone"
+                android:id="@+id/layoutSearch"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:paddingLeft="8dp"
+                    android:paddingRight="28dp"
+                    android:hint="Search Programs"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:scrollHorizontally="true"
+                    android:layout_gravity="center_horizontal"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/gotham_light"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textColorHint="@color/white"
+                    android:drawableLeft="@drawable/ic_search_icon"
+                    android:id="@+id/toolbarSearch"
+                    android:backgroundTint="@color/transparentGray"
+                    android:layout_width="160dp"
+                    android:imeOptions="actionDone"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_round_white" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:visibility="gone"
+                    android:id="@+id/imgCloseSearch"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_close_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/toolbarLogo"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_header_radyo_logo" />
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/stationsToolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:visibility="gone">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/stationsPrev"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_toLeftOf="@+id/STText"-->
+<!--                android:padding="10dp"-->
+<!--                android:rotation="180"-->
+<!--                android:src="@drawable/ic_forward"-->
+<!--                app:tint="@color/white" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/STText"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:ellipsize="marquee"-->
+<!--                android:fadingEdge="horizontal"-->
+<!--                android:gravity="center"-->
+<!--                android:marqueeRepeatLimit="marquee_forever"-->
+<!--                android:scrollHorizontally="true"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="HOME"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/stationsNext"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_toRightOf="@+id/STText"-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/ic_forward"-->
+<!--                app:tint="@color/white" />-->
+<!--        </RelativeLayout>-->
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>

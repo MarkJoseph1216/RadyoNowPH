@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_big"
+    android:layout_width="fill_parent"
+    android:layout_height="135dp"
+    android:background="@drawable/bg_notification">
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/status_bar_album_art"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_radyo_icon"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/status_bar_album_art"
+        android:divider="?android:listDivider"
+        android:dividerPadding="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <ImageButton
+            android:id="@+id/status_bar_prev"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/play_controls_notification"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_backward"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/status_bar_play"
+            android:layout_width="45dp"
+            android:background="@drawable/ic_baseline_play_circle_outline_24"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/status_bar_pause"
+            android:layout_width="40dp"
+            android:background="@drawable/ic_white_pause_circle_outline_24"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/status_bar_next"
+            android:layout_width="0.0dip"
+            android:layout_height="@dimen/play_controls_notification"
+            android:layout_weight="1.0"
+            android:background="?android:selectableItemBackground"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_fast_forward_24"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="1.0px"
+        android:layout_above="@+id/buttons"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/status_bar_album_art"
+        android:background="?android:dividerHorizontal"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@id/status_bar_collapse"
+        android:layout_width="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_close_icon"
+        android:backgroundTint="@color/white"
+        android:padding="@dimen/notification_padding"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:id="@+id/textarea"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:layout_toEndOf="@id/status_bar_album_art"
+        android:layout_toStartOf="@id/status_bar_collapse"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/notification_padding"
+        android:paddingStart="@dimen/notification_padding"
+        android:paddingTop="@dimen/notification_padding">
+
+        <TextView
+            android:fontFamily="@font/gotham_medium"
+            android:id="@+id/status_bar_track_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:ellipsize="marquee"
+            android:textStyle="bold"
+            android:fadingEdge="horizontal"
+            android:focusable="true"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:text="Channel Name"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/status_bar_artist_date"
+            android:fontFamily="@font/gotham_medium"
+            android:layout_width="fill_parent"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:text="Channel Date"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/status_bar_restriction"
+            android:fontFamily="@font/gotham_medium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:text="Channel Restriction"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</RelativeLayout>

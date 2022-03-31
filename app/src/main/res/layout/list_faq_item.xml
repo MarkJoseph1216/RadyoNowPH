@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/imgPlus"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/century_gothic_bold"
+            android:layout_width="wrap_content"
+            android:textSize="16dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/imgPlus"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center|end"
+            app:tint="@color/red"
+            android:src="@drawable/ic_plus_sign"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/viewSeparator"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"/>
+
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:id="@+id/layoutSubHeader"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_bottom">
+
+        <TextView
+            android:id="@+id/txtSubtitle"
+            android:layout_margin="13dp"
+            android:textSize="12.5dp"
+            android:lineSpacingMultiplier="0"
+            android:lineSpacingExtra="20dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/century_gothic_regular"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+</LinearLayout>

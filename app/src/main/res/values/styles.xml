@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="BottomNavigationView.TextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.BottomNavigationView.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.BottomNavigationView.Inactive</item>
+    </style>
+
+    <!-- blank styles for better code readability-->
+    <style name="TextAppearance"/>
+    <style name="TextAppearance.BottomNavigationView"/>
+
+    <!-- inactive tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Inactive">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <!-- active tab icon style -->
+    <style name="TextAppearance.BottomNavigationView.Active">
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="EditTextTheme">
+        <item name="android:background">@drawable/bg_edit_text_corner_5dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/gotham_light</item>
+    </style>
+
+    <style name="EditTextThemeProfile">
+        <item name="android:background">@drawable/bg_edit_text_corner_5dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/gotham_light</item>
+    </style>
+
+    <style name="ErrTextView">
+        <item name="android:fontFamily">@font/gotham_medium</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="rounded10dp">
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+    </style>
+
+    <style name="allRounded6dp">
+        <item name="cornerSizeBottomLeft">6dp</item>
+        <item name="cornerSizeBottomRight">6dp</item>
+        <item name="cornerSizeTopRight">6dp</item>
+        <item name="cornerSizeTopLeft">6dp</item>
+    </style>
+
+    <style name="roundedBottom">
+        <item name="cornerSizeBottomRight">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+    </style>
+    <style name="roundedAll10dp">
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="rounded10dpOpposite">
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
+    </style>
+
+    <style name="rounded20dp">
+        <item name="cornerSizeBottomLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+    </style>
+
+    <style name="gotham_medium">
+        <item name="android:fontFamily">@font/gotham_medium</item>
+    </style>
+
+    <style name="gotham_thin">
+        <item name="android:fontFamily">@font/gotham_thin</item>
+    </style>
+
+    <style name="gotham_light">
+        <item name="android:fontFamily">@font/gotham_light</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+    <style name="popupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+<!--        <item name="android:itemBackground">@android:color/darker_gray</item>-->
+        <item name="android:background">@color/darkGray</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/yellow</item>
+        <item name="android:textColorSecondary">@color/gray</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="bottomSheetStyle">@android:color/transparent</item>
+    </style>
+
+</resources>

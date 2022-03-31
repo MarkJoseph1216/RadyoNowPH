@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/station"
+        android:title="Channels"
+        android:icon="@drawable/ic_station"/>
+    <item
+        android:visible="true"
+        android:id="@+id/programs"
+        android:title="Programs"
+        android:icon="@drawable/ic_programs"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="News"
+        android:icon="@drawable/ic_news"/>
+
+    <item
+        android:visible="true"
+        android:id="@+id/favorites"
+        android:title="Favorites"
+        android:icon="@drawable/ic_favorite_icon"/>
+</menu>

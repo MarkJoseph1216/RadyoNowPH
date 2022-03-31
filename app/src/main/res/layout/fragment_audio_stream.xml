@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="start"
+                    android:id="@+id/albumThumb"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    app:srcCompat="@drawable/ic_audio_stream_holder"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/rounded20dp"/>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtStationName"
+                            android:layout_centerInParent="true"
+                            android:textSize="18dp"
+                            android:layout_alignParentLeft="true"
+                            android:fontFamily="@font/metropolis_bold"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/imgOption"
+                            android:maxLines="2"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:text="@string/aral_tarlakhenyo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/imgOption"
+                            android:layout_gravity="right"
+                            android:background="@drawable/ic_horizontal_dot_icon"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"/>
+
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/audioProgress"
+                        android:thumbTint="@color/red"
+                        android:layout_marginTop="10dp"
+                        android:secondaryProgressTint="@color/lightestRed"
+                        android:progressTint="@color/red"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtCurrentDuration"
+                            android:layout_marginLeft="30dp"
+                            android:text="00:00"
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalDuration"
+                            android:layout_marginRight="30dp"
+                            android:text="00:00"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgBackward"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_forwardseconds_icon"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="30dp"/>
+
+                        <ImageView
+                            android:id="@+id/prev"
+                            android:rotation="180"
+                            android:layout_toLeftOf="@+id/imgPlay"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_next_icon"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="20dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgPlay"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_play_logo"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="60dp"/>
+
+                        <ImageView
+                            android:id="@+id/next"
+                            android:layout_toRightOf="@+id/imgPlay"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_next_icon"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="20dp"/>
+
+                        <ImageView
+                            android:id="@+id/imgForward"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_backwardseconds_icon"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="30dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutTitleHolder"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:id="@+id/imgHeart"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_heartline_20dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/imgShowDescription"
+                        android:layout_toRightOf="@+id/imgHeart"
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:visibility="visible"
+                            android:id="@+id/txtHeaderDate"
+                            android:maxLines="1"
+                            android:fontFamily="@font/metropolis_medium"
+                            android:textColor="#737373"
+                            android:textSize="12dp"
+                            android:ellipsize="end"
+                            android:lineSpacingMultiplier="0"
+                            android:lineSpacingExtra="22dp"
+                            android:text="Loading..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="2dp"
+                            android:visibility="visible"
+                            android:id="@+id/txtHeaderDesc"
+                            android:maxLines="1"
+                            android:fontFamily="@font/gotham_book"
+                            android:textColor="#545454"
+                            android:textSize="13dp"
+                            android:ellipsize="end"
+                            android:lineSpacingMultiplier="1.3"
+                            android:text="Loading..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_centerInParent="true"
+                        android:id="@+id/imgShowDescription"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:backgroundTint="@color/black"
+                        android:background="@drawable/ic_down_arrow_solid"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:layout_marginRight="30dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/ic_favorite_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ScrollView
+                android:visibility="gone"
+                android:id="@+id/layoutSubtitleHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_toRightOf="@+id/imgCloseDesc"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/txtChannelName"
+                            android:visibility="gone"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="23dp"
+                            android:textSize="14dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="10dp"
+                            android:lineSpacingMultiplier="0"
+                            android:lineSpacingExtra="20sp"
+                            android:fontFamily="@font/gotham_medium"
+                            android:text="Name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:id="@+id/imgCloseDesc"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:backgroundTint="@color/black"
+                            android:background="@drawable/ic_arrow_up_solid"
+                            android:layout_gravity="end"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"/>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/txtChannelDate"
+                        android:visibility="gone"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="23dp"
+                        android:textSize="12dp"
+                        android:textColor="@color/gray"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="6dp"
+                        android:lineSpacingMultiplier="0"
+                        android:lineSpacingExtra="20sp"
+                        android:fontFamily="@font/gotham_medium"
+                        android:text="Date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="23dp"
+                        android:background="@color/gray"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="23dp"
+                        android:layout_toLeftOf="@+id/txtOr"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"/>
+
+                    <TextView
+                        android:visibility="visible"
+                        android:id="@+id/txtChannelDesc"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/gotham_book"
+                        android:layout_marginHorizontal="15dp"
+                        android:textSize="13dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:text="Channel Description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </ScrollView>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/imgBannerAds"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="17dp"
+                android:layout_below="@+id/channelDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtViewComments"
+                android:layout_marginHorizontal="20dp"
+                android:text="View Comments"
+                android:background="?android:selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                android:fontFamily="@font/century_gothic_bold"
+                android:textStyle="bold"
+                android:textSize="13dp"
+                android:visibility="visible"
+                android:textColor="@color/gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtNoPrograms"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:fontFamily="@font/gotham_bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="90dp"
+                android:layout_gravity="center"
+                android:text="Programs Coming Soon!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginBottom="20dp"
+                android:visibility="visible"
+                android:layout_marginTop="10dp"
+                android:id="@+id/streamingRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

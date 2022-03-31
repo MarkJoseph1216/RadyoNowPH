@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:animateLayoutChanges="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.programs.ProgramsFragment">
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/programLoading"
+        android:indeterminateTint="@color/red"
+        android:layout_centerInParent="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="vertical"
+        android:id="@+id/recentSearchLayout"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtLine"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/red"
+                android:text="|"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/txtLine"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/gotham_medium"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:textColor="@color/red"
+                android:text="Recent Searches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtClear"
+                android:layout_centerInParent="true"
+                android:gravity="end"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/gotham_light"
+                android:textSize="14dp"
+                android:textColor="@color/com_facebook_blue"
+                android:text="Clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/recentSearchRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:background="@color/gray"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@+id/recentSearchLayout"
+        android:id="@+id/programsRecyclerContainer"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/programsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/noPrograms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawablePadding="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="@font/century_gothic_regular"
+        android:lineSpacingMultiplier="0"
+        android:lineSpacingExtra="20dp"
+        android:text="The program\ndoes not exist"
+        android:textColor="@color/gray"
+        android:drawableTint="@color/gray"
+        app:drawableTopCompat="@drawable/ic_no_programs" />
+</RelativeLayout>

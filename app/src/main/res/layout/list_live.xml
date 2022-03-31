@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="10dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/playlistThumb"
+        android:layout_width="130dp"
+        android:layout_height="90dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="5dp"
+        android:foreground="@drawable/bg_opposite_corner_border_white"
+        app:srcCompat="@drawable/ic_login"
+        app:shapeAppearanceOverlay="@style/rounded10dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        app:cardCornerRadius="3dp"
+        android:visibility="gone"
+        android:layout_alignRight="@+id/playlistThumb"
+        android:layout_alignTop="@+id/playlistThumb"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/lightGray"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/playlistThumb">
+        <TextView
+            android:id="@+id/playlistItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_live_rating_star_12dp"
+            android:drawableTint="@color/black"
+            android:text="4.7"
+            android:layout_marginHorizontal="3dp"
+            android:gravity="center"
+            android:textSize="12sp"/>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:id="@+id/playlistName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RADIO STATION"
+        android:layout_alignLeft="@+id/playlistThumb"
+        android:layout_alignRight="@+id/playlistThumb"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingMultiplier="0"
+        android:lineSpacingExtra="19dp"
+        android:layout_below="@+id/playlistThumb"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:id="@+id/liveRadioStationSubtitle"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="RADIO Desc"
+        android:layout_alignLeft="@+id/playlistThumb"
+        android:layout_alignRight="@+id/playlistThumb"
+        android:textColor="@color/gray"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/playlistName"
+        android:textSize="12dp"
+        android:gravity="center" />
+
+</RelativeLayout>

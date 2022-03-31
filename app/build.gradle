@@ -1,0 +1,137 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlin-kapt'
+    id 'realm-android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('C:\\Users\\MarkJoseph16\\Desktop\\RadyoNowPH\\radyokey.jks')
+            storePassword 'radyopilipino'
+            keyAlias 'radyopilipino'
+            keyPassword 'radyopilipino'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+    ndkVersion '21.3.6528147'
+
+    defaultConfig {
+        applicationId "com.radyopilipinomediagroup.radyo_now"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 5
+        versionName "5.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+
+    //Retrofit
+    def retrofitVersion = "2.6.1"
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+
+    //Circular Image View
+    implementation 'com.mikhaellopez:circularimageview:4.2.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+
+    //Firebase Implementation
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+    implementation 'com.google.firebase:firebase-auth:20.0.3'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+
+    //Gmail Implementation
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //Facebook Implementation
+    implementation 'com.facebook.android:facebook-login:5.15.3'
+
+    //Google ads (adMob)
+    implementation 'com.google.android.gms:play-services-ads:19.8.0'
+
+    //AVLoadingIndicatorView
+    implementation 'com.wang.avi:library:2.1.3'
+
+    //Coroutine
+    def coroutineVersion = "1.4.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+
+    //okhttp
+    implementation "com.squareup.okhttp:okhttp:2.6.0"
+
+    //ShimmerLayout
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+    //PullRefreshLayout
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+
+    //YoutubePlayer
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+
+    //VideoPlayer
+    implementation 'com.github.halilozercan:BetterVideoPlayer:kotlin-SNAPSHOT'
+
+    //Observer Pattern
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //FlowTextView
+    implementation 'com.github.deano2390:FlowTextView:2.0.5'
+
+    //Slider Indicator
+    implementation 'com.tbuonomo:dotsindicator:4.2'
+
+    //Switch Button
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'us.belka:androidtoggleswitch:1.2.2'
+    implementation 'com.nex3z:toggle-button-group:1.1.9'
+
+    //Branch IO
+    implementation('io.branch.sdk.android:library:2.+') {
+        exclude module: 'answers-shim'
+    }
+    implementation "com.android.installreferrer:installreferrer:1.0"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.30"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.30"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

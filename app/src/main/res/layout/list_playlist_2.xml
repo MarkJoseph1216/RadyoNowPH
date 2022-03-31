@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp">
+
+    <!-- android:background="@drawable/bg_round_gray"-->
+    <RelativeLayout
+        android:id="@+id/faveThumbContainer"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/faveThumb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/faveTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_toEndOf="@id/faveThumbContainer"
+        android:layout_toRightOf="@id/faveThumbContainer"
+        android:ellipsize="end"
+        android:fontFamily="@font/gotham_medium"
+        android:lineSpacingExtra="20sp"
+        android:lineSpacingMultiplier="0"
+        android:maxLines="2"
+        android:text="Loading..."
+        android:textColor="@color/black"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/faveSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/faveTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_toEndOf="@id/faveThumbContainer"
+        android:layout_toRightOf="@id/faveThumbContainer"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="-"
+        android:fontFamily="@font/century_gothic_bold"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/gray"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/faveRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/faveThumbContainer"
+        android:layout_marginHorizontal="10dp"
+        android:layout_toEndOf="@id/faveThumbContainer"
+        android:layout_toRightOf="@id/faveThumbContainer"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:id="@+id/otherOption"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_options"
+        app:tint="@color/black" />
+</RelativeLayout>
