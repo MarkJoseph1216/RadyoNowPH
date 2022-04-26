@@ -10,7 +10,7 @@ class Constants {
         val FACEBOOK_PERMISSIONS = mutableListOf("email", "public_profile")
         const val GOOGLE_SIGN_IN_CODE = 120
         const val ANALYTICS_PARAM = "parameteres"
-        const val APP_BASE_URL = "http://core.rnradyopilipino.com/api/v1/"
+        const val APP_BASE_URL = "http://core-uat.rnradyopilipino.com:8080/api/v1/"
 //        http://core-uat.rnradyopilipino.com:8080/api/v1/
 //        http://core-qa.rnradyopilipino.com/api/v1/
 //        http://core.rnradyopilipino.com/api/v1/

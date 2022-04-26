@@ -12,6 +12,8 @@ import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.programs.search.ProgramSearchFragment
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import io.realm.Realm
 
 
@@ -69,7 +71,7 @@ class ProgramsPresenter(var view: ProgramsFragment) : AbstractPresenter<Programs
             object : RetrofitService.ResultHandler<ProgramsModel> {
                 override fun onSuccess(data: ProgramsModel?) {
                     when (data?.data?.size) {
-                        0 -> displayNoPrograms()
+                        0 -> displayNoPrograms(data.message.toString())
                         else -> {
                             programs.addAll(data?.data!!)
                             programs.sortBy { it.name }
@@ -80,15 +82,20 @@ class ProgramsPresenter(var view: ProgramsFragment) : AbstractPresenter<Programs
                     }
                 }
 
-                override fun onError(error: ProgramsModel?) = displayNoPrograms()
-                override fun onFailed(message: String) = displayNoPrograms()
+                override fun onError(error: ProgramsModel?) = displayNoPrograms(error?.message.toString())
+                override fun onFailed(message: String) = displayNoPrograms(message)
             })
     }
 
-    private fun displayNoPrograms(){
+    private fun displayNoPrograms(message: String){
         view.setLoadingVisibility(8, 0)
         view.noPrograms?.visibility = android.view.View.VISIBLE
         view.getRecyclerContainer()?.visibility = android.view.View.GONE
+
+        if (!checkIfAuthenticated(message)) {
+            signOutExpired(view.context(), getSessionManager)
+            view.activity().finish()
+        }
     }
 
     interface View : AbstractView {

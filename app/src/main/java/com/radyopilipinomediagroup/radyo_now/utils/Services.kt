@@ -2,8 +2,10 @@ package com.radyopilipinomediagroup.radyo_now.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -19,6 +21,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.facebook.login.LoginManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -27,12 +32,15 @@ import com.google.firebase.analytics.ktx.logEvent
 import com.google.firebase.ktx.Firebase
 import com.mikhaellopez.circularimageview.CircularImageView
 import com.radyopilipinomediagroup.radyo_now.R
+import com.radyopilipinomediagroup.radyo_now.local.SessionManager
 import com.radyopilipinomediagroup.radyo_now.model.ads.AdsModel
+import com.radyopilipinomediagroup.radyo_now.ui.account.login.LoginActivity
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardActivity
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+
 
 class Services {
     companion object {
@@ -75,6 +83,12 @@ class Services {
             val intent = Intent(context, toClass)
             context.startActivity(intent)
             context.finish()
+        }
+
+
+        fun nextIntent(context: Context, toClass: Class<*>){
+            val intent = Intent(context, toClass)
+            context.startActivity(intent)
         }
 
         fun nextIntent(context: Activity, data: String, toClass: Class<*>){
@@ -622,6 +636,56 @@ class Services {
                 param("id", id!!)
                 param(FirebaseAnalytics.Param.CONTENT_TYPE, "custom")
             }
+        }
+
+        fun checkIfAuthenticated(message: String): Boolean {
+            return !message.contains("Unauthenticated")
+        }
+
+        fun openPermissionSettings(packageName: String) : Intent {
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            val uri: Uri = Uri.fromParts("package", packageName, null)
+            intent.data = uri
+            return intent
+        }
+
+        fun showWarningDialog(
+            context: Context,
+            title: String,
+            message: String,
+            callback: DialogInterface.OnClickListener) {
+
+            AlertDialog.Builder(context)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(android.R.string.yes
+            ) { dialog, which ->
+                callback.onClick(dialog, which)
+            }
+            .setNegativeButton(android.R.string.no) { dialog, which ->
+                callback.onClick(dialog, which)
+            }
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show()
+        }
+
+        fun signOutExpired(context: Context, sessionManager: SessionManager?){
+            facebookGmailSignOut(context)
+            sessionManager?.setData(SessionManager.SESSION_STATUS, "logged_out")
+            sessionManager?.setLoginType("")
+            nextIntent(context, LoginActivity::class.java)
+        }
+
+        private fun facebookGmailSignOut(context: Context) {
+            try {
+                //Facebook Sign Out
+                LoginManager.getInstance().logOut()
+
+                //Google Sign Out
+                val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+                val googleSignInClient = GoogleSignIn.getClient(context, gso)
+                googleSignInClient.signOut()
+            } catch (e : Exception) {}
         }
     }
 }

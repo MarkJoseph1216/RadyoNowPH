@@ -8,6 +8,9 @@ import com.google.gson.Gson
 import com.radyopilipinomediagroup.radyo_now.model.stations.StationListResultModel
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
+import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import com.radyopilipinomediagroup.radyo_now.utils.log
 import io.supercharge.shimmerlayout.ShimmerLayout
 
@@ -54,6 +57,11 @@ class StationsPresenter(var view: StationsFragment): AbstractPresenter<StationsF
                 Toast.makeText(view.context(), "Something went wrong, Please try again.", Toast.LENGTH_SHORT).show()
                 stopShimmerLayout()
                 view.noDataToShow()
+
+                if (!checkIfAuthenticated(error?.message.toString())) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
             }
             override fun onFailed(message: String) {
                 log(message)

@@ -268,7 +268,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginBottom="20dp"
                     android:layout_marginTop="53dp"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
@@ -300,6 +299,46 @@
                         android:textSize="14dp"
                         tools:ignore="RtlCompat" />
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/btnDeactivate"
+                        android:fontFamily="@font/metropolis_bold"
+                        android:text="| Account Deactivate"
+                        android:textColor="@color/red"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/btnDeactivate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="end"
+                        android:background="@drawable/bg_round_gray"
+                        android:backgroundTint="#ECBD45"
+                        android:fontFamily="@font/metropolis_medium"
+                        android:gravity="start"
+                        android:padding="6dp"
+                        android:text="Deativate"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        tools:ignore="RtlCompat" />
+                </RelativeLayout>
             </LinearLayout>
 
             <androidx.core.widget.NestedScrollView

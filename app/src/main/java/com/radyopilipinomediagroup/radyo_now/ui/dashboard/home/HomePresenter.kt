@@ -41,6 +41,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.dashboard.stations.channel.Chann
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.stations.channel.StationDetailsHandler
 import com.radyopilipinomediagroup.radyo_now.utils.Constants
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import com.radyopilipinomediagroup.radyo_now.utils.guestWarningDialog
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
@@ -199,6 +201,11 @@ class HomePresenter(val view: HomeFragment): AbstractPresenter<HomeFragment>(vie
             override fun onError(error: FeaturedResultModel?) {
                 Log.d("displayFeaturedERR", error?.message!!)
                 view.stopShimmerFeaturedContent()
+
+                if (!checkIfAuthenticated(error.message!!)) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
             }
 
             override fun onFailed(message: String) {

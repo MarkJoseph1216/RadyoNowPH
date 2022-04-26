@@ -45,6 +45,7 @@ import com.radyopilipinomediagroup.radyo_now.model.realm.NotificationLocal
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.notification.NotificationFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.profile.ProfileFragment
 import com.radyopilipinomediagroup.radyo_now.utils.*
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
 
 class DashboardPresenter(var view: DashboardActivity) : AbstractPresenter<DashboardActivity>(view) {
 
@@ -356,6 +357,9 @@ class DashboardPresenter(var view: DashboardActivity) : AbstractPresenter<Dashbo
 
                 override fun onError(error: AdsModel?) {
                     println("getAdsError: ${Gson().toJson(error)}")
+                    if (!checkIfAuthenticated(error?.message.toString())) {
+                        signOutUser()
+                    }
                 }
 
                 override fun onFailed(message: String) {

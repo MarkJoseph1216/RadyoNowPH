@@ -20,6 +20,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.featured.LiveList
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.featured.ProgramListAdapter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.stations.StationsFragment
 import com.radyopilipinomediagroup.radyo_now.utils.*
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -114,7 +116,12 @@ class ChannelPresenter(var view: ChannelFragment) : AbstractPresenter<ChannelFra
                 view.updateChannelDDetails(data)
                 checkBroadwaveUrlNull()
             }
-            override fun onError(error: StationDetailsResultModel?) {}
+            override fun onError(error: StationDetailsResultModel?) {
+                if (!checkIfAuthenticated(error?.message.toString())) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
+            }
             override fun onFailed(message: String) {}
         })
     }

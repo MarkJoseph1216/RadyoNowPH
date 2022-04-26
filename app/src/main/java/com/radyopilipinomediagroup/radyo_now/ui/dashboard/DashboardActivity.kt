@@ -1,14 +1,15 @@
 package com.radyopilipinomediagroup.radyo_now.ui.dashboard
 
 import android.annotation.SuppressLint
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
+import android.content.DialogInterface.BUTTON_NEGATIVE
+import android.content.DialogInterface.BUTTON_POSITIVE
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Configuration
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +20,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.GravityCompat
-import androidx.core.view.forEach
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -37,8 +37,6 @@ import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.HomeFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.app.settings.AppSettingsFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.faq.FAQFragment
-import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.notification.NotificationFragment
-import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.profile.ProfileFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.terms.TermsFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.playlist.streams.AudioStreamFragment
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.stations.featuredstreaming.FeaturedStreamFragment
@@ -46,6 +44,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.dashboard.stations.featuredstrea
 import com.radyopilipinomediagroup.radyo_now.utils.Constants
 import com.radyopilipinomediagroup.radyo_now.utils.NotificationService
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.openPermissionSettings
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.showWarningDialog
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import io.branch.referral.Branch
 
@@ -315,7 +315,18 @@ class DashboardActivity : AppCompatActivity(), AbstractPresenter.ContextView<Das
         if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+            showWarningDialog(
+            context = this,
+            title = "Permission Denied",
+            message = "You must enable the permission on the settings of the app to proceed.",
+            callback = DialogInterface.OnClickListener { dialog, which ->
+                when(which) {
+                    BUTTON_POSITIVE -> {
+                        startActivity(openPermissionSettings(packageName))
+                    }
+                }
+                dialog.dismiss()
+            })
         }
     }
 

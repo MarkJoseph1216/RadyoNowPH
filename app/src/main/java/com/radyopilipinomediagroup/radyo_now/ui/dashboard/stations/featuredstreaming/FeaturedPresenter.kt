@@ -36,6 +36,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.comments.CommentFragment
 import com.radyopilipinomediagroup.radyo_now.utils.*
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import io.supercharge.shimmerlayout.ShimmerLayout
 import java.io.IOException
 import java.text.ParseException
@@ -207,6 +209,11 @@ class FeaturedPresenter(var view: FeaturedStreamFragment) : AbstractPresenter<Fe
                         Toast.makeText(view.activity(), error.getMessage(), Toast.LENGTH_SHORT)
                             .show()
                         view.getAVLoading().visibility = android.view.View.GONE
+
+                        if (!checkIfAuthenticated(error.getMessage()!!)) {
+                            signOutExpired(view.context(), getSessionManager)
+                            view.activity().finish()
+                        }
                     }
 
                     override fun onFailed(message: String) {

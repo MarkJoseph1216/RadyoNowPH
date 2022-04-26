@@ -8,6 +8,9 @@ import com.radyopilipinomediagroup.radyo_now.model.realm.NotificationLocal
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.utils.RealmService
+import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 
 class NotificationPresenter(var view: NotificationFragment):
     AbstractPresenter<NotificationFragment>(view) {
@@ -53,7 +56,12 @@ class NotificationPresenter(var view: NotificationFragment):
                         realm.validateInsert(it!!)
                     }
                 }
-                override fun onError(error: NotificationResponseModel?) { }
+                override fun onError(error: NotificationResponseModel?) {
+                    if (!checkIfAuthenticated(error?.message.toString())) {
+                        signOutExpired(view.context(), getSessionManager)
+                        view.activity().finish()
+                    }
+                }
                 override fun onFailed(message: String) { }
             })
     }

@@ -24,6 +24,8 @@ import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.HomeFragment
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -97,6 +99,11 @@ class ProfilePresenter(var view: ProfileFragment): AbstractPresenter<ProfileFrag
 
             override fun onError(error: ProfileDetailsResponse?) {
                 Log.d("Error", error?.message!!)
+
+                if (!checkIfAuthenticated(error.message.toString())) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
             }
 
             override fun onFailed(message: String) {

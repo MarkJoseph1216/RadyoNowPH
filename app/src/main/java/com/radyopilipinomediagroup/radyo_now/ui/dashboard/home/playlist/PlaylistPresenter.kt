@@ -16,6 +16,9 @@ import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistListResultMo
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardActivity
+import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import io.supercharge.shimmerlayout.ShimmerLayout
 
@@ -79,6 +82,11 @@ class PlaylistPresenter(var view : PlaylistFragment): AbstractPresenter<Playlist
         streamItems?.clear()
         updateList()
         stopShimmerLayout()
+
+        if (!checkIfAuthenticated(errorMsg.toString())) {
+            signOutExpired(view.context(), getSessionManager)
+            view.activity().finish()
+        }
     }
 
     private fun updateList() {

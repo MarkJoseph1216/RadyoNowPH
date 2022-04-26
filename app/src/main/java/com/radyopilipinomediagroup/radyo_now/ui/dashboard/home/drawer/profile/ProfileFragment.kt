@@ -46,6 +46,7 @@ class ProfileFragment : Fragment(), AbstractPresenter.ContextView<FragmentActivi
     private var txtUserBirth : TextView? = null
     private var txtUserCity : TextView? = null
     private var txtUserRegion : TextView? = null
+    private var btnDeactivate: TextView? = null
     private var profilePic : CircularImageView? = null
     private var changePic : ImageView? = null
 
@@ -98,6 +99,7 @@ class ProfileFragment : Fragment(), AbstractPresenter.ContextView<FragmentActivi
         userGender = profileView?.findViewById(R.id.userGender)
         userCity = profileView?.findViewById(R.id.userCity)
         userRegion = profileView?.findViewById(R.id.userRegion)
+        btnDeactivate = profileView?.findViewById(R.id.btnDeactivate)
     }
 
     private fun initDeclaration(){
@@ -114,6 +116,7 @@ class ProfileFragment : Fragment(), AbstractPresenter.ContextView<FragmentActivi
         btnUploadPhoto!!.setOnClickListener(this::onClick)
         changePic!!.setOnClickListener(this::onClick)
         userBirth?.setOnClickListener(this::onClick)
+        btnDeactivate?.setOnClickListener(this::onClick)
     }
 
     override fun onClick(v: View?) {
@@ -167,6 +170,7 @@ class ProfileFragment : Fragment(), AbstractPresenter.ContextView<FragmentActivi
                 }
             }
             R.id.userBirth -> profilePresenter?.openBDateSelector()
+            R.id.btnDeactivate -> {}
         }
     }
 

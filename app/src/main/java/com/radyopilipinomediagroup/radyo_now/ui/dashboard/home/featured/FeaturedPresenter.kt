@@ -12,6 +12,8 @@ import com.radyopilipinomediagroup.radyo_now.model.stations.*
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.utils.*
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import io.supercharge.shimmerlayout.ShimmerLayout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -80,7 +82,13 @@ class FeaturedPresenter(var view: FeaturedFragment) : AbstractPresenter<Featured
                 view.featuredStationLoaded()
             }
 
-            override fun onError(error: StationListResultModel?) { view.context?.toast(error?.message.toString()) }
+            override fun onError(error: StationListResultModel?) {
+                view.context?.toast(error?.message.toString())
+                if (!checkIfAuthenticated(error?.message.toString())) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
+            }
             override fun onFailed(message: String) { view.context?.toast(message) }
         })
     }

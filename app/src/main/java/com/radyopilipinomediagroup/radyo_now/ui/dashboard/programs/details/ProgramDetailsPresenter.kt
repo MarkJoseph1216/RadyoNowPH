@@ -21,6 +21,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardActivity
 import com.radyopilipinomediagroup.radyo_now.utils.PopupAdsStatus
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 import com.radyopilipinomediagroup.radyo_now.utils.guestWarningDialog
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import java.lang.reflect.Field
@@ -135,7 +137,12 @@ class ProgramDetailsPresenter(var view: ProgramDetailsFragment)
                 programDetailsModel = data
                 view.setProgramDetails(data!!, episodeCount.toString())
             }
-            override fun onError(error: ProgramDetailsModel?) {}
+            override fun onError(error: ProgramDetailsModel?) {
+                if (!checkIfAuthenticated(error?.message!!)) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
+            }
             override fun onFailed(message: String) {
                 Log.d("Error", message)
             }
