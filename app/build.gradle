@@ -12,6 +12,15 @@ android {
     buildToolsVersion "30.0.2"
     ndkVersion '21.3.6528147'
 
+    signingConfigs {
+        release {
+            storeFile file('/Users/mjfcaron/Desktop/Projects/RadyoNowPH/radyokey.jks')
+            storePassword 'radyopilipino'
+            keyAlias 'radyopilipino'
+            keyPassword 'radyopilipino'
+        }
+    }
+
     defaultConfig {
         applicationId "com.radyopilipinomediagroup.radyo_now"
         minSdkVersion 19
@@ -27,8 +36,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
