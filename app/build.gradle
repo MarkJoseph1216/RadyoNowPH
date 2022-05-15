@@ -8,14 +8,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        release {
-            storeFile file('C:\\Users\\MarkJoseph16\\Desktop\\RadyoNowPH\\radyokey.jks')
-            storePassword 'radyopilipino'
-            keyAlias 'radyopilipino'
-            keyPassword 'radyopilipino'
-        }
-    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
     ndkVersion '21.3.6528147'
@@ -35,7 +27,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
     compileOptions {

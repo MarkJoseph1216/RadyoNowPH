@@ -3,6 +3,7 @@ package com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.profile
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,12 +13,12 @@ import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
-import android.widget.DatePicker
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.ContextCompat
 import com.google.gson.Gson
+import com.radyopilipinomediagroup.radyo_now.R
+import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDeactivate
 import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsModel
 import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsResponse
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
@@ -232,7 +233,45 @@ class ProfilePresenter(var view: ProfileFragment): AbstractPresenter<ProfileFrag
         dialog?.show()
     }
 
-    interface View : AbstractPresenter.AbstractView {
+    fun showDeactivateDialog() {
+        val dialog = Dialog(view.context())
+        dialog.setContentView(R.layout.dialog_account_deactivate)
+        val window = dialog.window!!.attributes
+        window.width = android.view.WindowManager.LayoutParams.MATCH_PARENT
+        window.height = android.view.WindowManager.LayoutParams.WRAP_CONTENT
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnCancel : Button = dialog.findViewById(R.id.btnCancel)
+        val btnDeactivate : Button = dialog.findViewById(R.id.btnDeactivate)
+
+        btnCancel.setOnClickListener { dialog.dismiss() }
+        btnDeactivate.setOnClickListener { deactivateAccount(dialog) }
+
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.show()
+    }
+
+    private fun deactivateAccount(dialog: Dialog) {
+        view.context?.toast("Loading, Please wait...")
+        getRepositories?.deactivateAccount(getSessionManager?.getToken()!!,
+        object : RetrofitService.ResultHandler<ProfileDeactivate> {
+            override fun onSuccess(data: ProfileDeactivate?) = showDeactivateMessage(dialog, data?.message.toString())
+            override fun onError(error: ProfileDeactivate?) = showDeactivateMessage(dialog, error?.message)
+            override fun onFailed(message: String) = showDeactivateMessage(dialog, message)
+        })
+    }
+
+    private fun showDeactivateMessage(dialog: Dialog, message: String?) {
+        view.context?.toast(message.toString())
+        dialog.dismiss()
+
+        if (message?.contains("Success") == true) {
+            signOutExpired(view.context(), getSessionManager)
+            view.activity().finish()
+        }
+    }
+
+    interface View : AbstractView {
         fun setProfileDetails(details: ProfileDetailsResponse?)
         fun setBirthDate(date: String)
         fun setTextErrorResult(errorResult: String)

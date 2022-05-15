@@ -9,6 +9,7 @@ import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistContentsResu
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistDetailsResultModel
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistFeaturedContentsRM
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistListResultModel
+import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDeactivate
 import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsResponse
 import com.radyopilipinomediagroup.radyo_now.model.programs.FeaturedProgramsResultModel
 import com.radyopilipinomediagroup.radyo_now.model.programs.ProgramDetailsModel
@@ -96,6 +97,10 @@ interface RetrofitRequest {
     @Multipart
     @POST("app-users/avatar")
     fun uploadProfilePhoto(@Part avatar: MultipartBody.Part?): Call<ProfileDetailsResponse>
+
+    @Headers("Content-Type:application/json", "Accept:application/json")
+    @POST("app-users/deactivate")
+    fun deactivateAccount(@Query("user_token") userToken: String): Call<ProfileDeactivate>
 
     @GET("contents/{contentId}")
     fun contentDetails(@Path("contentId") contentId: Int?): Call<ContentDetailsResponse>

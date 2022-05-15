@@ -58,4 +58,9 @@
     <string name="favorites_empty_text">Tap the option button next to a program you like, and select "Add to Favorites"</string>
     <string name="terms_add_birthdate">I have read and accept the<font color='#B9282F'> Terms &amp; Conditions</font></string>
     <string name="favorites">Add to favorites</string>
+    <string name="title_deactivate_account">Are you sure you want to deactivate your account?</string>
+    <string name="title_deactivate_desc">You\'re about to deactivate this account.
+    Once deactivated you won\'t be able to access the account or any content added.
+    You\'ll have 30 days to reactivate your account.
+    After 30 days, your account will be permanently deleted.</string>
 </resources>

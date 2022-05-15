@@ -687,5 +687,21 @@ class Services {
                 googleSignInClient.signOut()
             } catch (e : Exception) {}
         }
+
+        fun gmailSignOut(context: Context){
+            try {
+                //Google Sign Out
+                val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+                val googleSignInClient = GoogleSignIn.getClient(context, gso)
+                googleSignInClient.signOut()
+            } catch (e: Exception) {}
+        }
+
+        fun facebookSignOut(){
+            try {
+                //Facebook Sign Out
+                LoginManager.getInstance().logOut()
+            } catch (e: Exception) {}
+        }
     }
 }

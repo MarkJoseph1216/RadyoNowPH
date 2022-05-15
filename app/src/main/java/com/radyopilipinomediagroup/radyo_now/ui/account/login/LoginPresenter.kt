@@ -30,6 +30,8 @@ import com.radyopilipinomediagroup.radyo_now.ui.account.addbirthdate.AddBirthDat
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.DashboardActivity
 import com.radyopilipinomediagroup.radyo_now.utils.Constants
 import com.radyopilipinomediagroup.radyo_now.utils.Services
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.facebookSignOut
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.gmailSignOut
 import com.radyopilipinomediagroup.radyo_now.utils.toast
 import java.lang.Exception
 
@@ -65,6 +67,8 @@ class LoginPresenter(var view: LoginActivity) : AbstractPresenter<LoginActivity>
             }
         }
         override fun onError(error: SSOResultModel?) {
+            gmailSignOut(view.context())
+            facebookSignOut()
             Toast.makeText(view.context(), error?.message, Toast.LENGTH_SHORT).show()
         }
         override fun onFailed(message: String) {
@@ -148,7 +152,7 @@ class LoginPresenter(var view: LoginActivity) : AbstractPresenter<LoginActivity>
                                 SSORetrofitHandler
                             )
                         } catch (e: Exception) {
-                            e.message
+                            gmailSignOut(view.context())
                         }
                     }
                     override fun onError(error: GoogleAccessTokenResult?) {

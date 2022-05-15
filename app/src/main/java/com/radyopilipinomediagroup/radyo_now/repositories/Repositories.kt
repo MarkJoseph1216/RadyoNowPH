@@ -11,6 +11,7 @@ import com.radyopilipinomediagroup.radyo_now.model.notification.NotificationResp
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistContentsResultModel
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistFeaturedContentsRM
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistListResultModel
+import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDeactivate
 import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsModel
 import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsResponse
 import com.radyopilipinomediagroup.radyo_now.model.programs.FeaturedProgramsResultModel
@@ -1084,27 +1085,55 @@ class Repositories {
         data: MultipartBody.Part, result: RetrofitService.ResultHandler<ProfileDetailsResponse>){
 
         RetrofitService.retrofitService(RetrofitRequest::class.java, token)
-            .uploadProfilePhoto(data).enqueue(
-                object : Callback<ProfileDetailsResponse> {
-                    override fun onResponse(
-                        call: Call<ProfileDetailsResponse>,
-                        response: Response<ProfileDetailsResponse>
-                    ) {
-                        when {
-                            response.code() == 200 -> result.onSuccess(response.body())
-                            response.code() <= 500 -> result.onError(
-                                parseRetrofitError(
-                                    response.errorBody()!!.charStream(),
-                                    ProfileDetailsResponse::class.java
-                                )
+        .uploadProfilePhoto(data).enqueue(
+            object : Callback<ProfileDetailsResponse> {
+                override fun onResponse(
+                    call: Call<ProfileDetailsResponse>,
+                    response: Response<ProfileDetailsResponse>
+                ) {
+                    when {
+                        response.code() == 200 -> result.onSuccess(response.body())
+                        response.code() <= 500 -> result.onError(
+                            parseRetrofitError(
+                                response.errorBody()!!.charStream(),
+                                ProfileDetailsResponse::class.java
                             )
-                        }
+                        )
                     }
+                }
 
-                    override fun onFailure(call: Call<ProfileDetailsResponse>, t: Throwable) {
-                        result.onFailed(t.localizedMessage!!)
-                    }
-                })
+                override fun onFailure(call: Call<ProfileDetailsResponse>, t: Throwable) {
+                    result.onFailed(t.localizedMessage!!)
+                }
+            })
+    }
+
+    fun deactivateAccount(
+        userToken: String,
+        result: RetrofitService.ResultHandler<ProfileDeactivate>
+    ) {
+        RetrofitService.retrofitService(RetrofitRequest::class.java, userToken)
+        .deactivateAccount(userToken).enqueue(
+        object : Callback<ProfileDeactivate> {
+            override fun onResponse(
+                call: Call<ProfileDeactivate>,
+                response: Response<ProfileDeactivate>
+            ) {
+                when {
+                    response.code() == 200 -> result.onSuccess(response.body())
+                    response.code() <= 500 -> result.onError(
+                        parseRetrofitError(
+                            response.errorBody()!!.charStream(),
+                            ProfileDeactivate::class.java
+                        )
+                    )
+                }
+            }
+
+            override fun onFailure(call: Call<ProfileDeactivate>, t: Throwable) {
+                result.onFailed(t.localizedMessage!!)
+            }
+        })
     }
 
     fun requestAccessToken(

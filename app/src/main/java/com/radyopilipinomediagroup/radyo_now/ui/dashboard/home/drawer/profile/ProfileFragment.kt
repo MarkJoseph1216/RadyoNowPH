@@ -170,7 +170,7 @@ class ProfileFragment : Fragment(), AbstractPresenter.ContextView<FragmentActivi
                 }
             }
             R.id.userBirth -> profilePresenter?.openBDateSelector()
-            R.id.btnDeactivate -> {}
+            R.id.btnDeactivate -> profilePresenter?.showDeactivateDialog()
         }
     }
 
