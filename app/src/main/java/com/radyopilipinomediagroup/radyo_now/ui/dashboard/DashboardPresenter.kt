@@ -30,6 +30,7 @@ import com.radyopilipinomediagroup.radyo_now.model.ads.AdsModel
 import com.radyopilipinomediagroup.radyo_now.model.notification.NotificationModel
 import com.radyopilipinomediagroup.radyo_now.model.notification.NotificationResponseModel
 import com.radyopilipinomediagroup.radyo_now.model.playlist.PlaylistListResultModel
+import com.radyopilipinomediagroup.radyo_now.model.profile.ProfileDetailsResponse
 import com.radyopilipinomediagroup.radyo_now.repositories.RetrofitService
 import com.radyopilipinomediagroup.radyo_now.ui.AbstractPresenter
 import com.radyopilipinomediagroup.radyo_now.ui.account.login.LoginActivity
@@ -46,6 +47,7 @@ import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.notificati
 import com.radyopilipinomediagroup.radyo_now.ui.dashboard.home.drawer.profile.ProfileFragment
 import com.radyopilipinomediagroup.radyo_now.utils.*
 import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.checkIfAuthenticated
+import com.radyopilipinomediagroup.radyo_now.utils.Services.Companion.signOutExpired
 
 class DashboardPresenter(var view: DashboardActivity) : AbstractPresenter<DashboardActivity>(view) {
 
@@ -453,6 +455,20 @@ class DashboardPresenter(var view: DashboardActivity) : AbstractPresenter<Dashbo
     fun setHome(){
         val menuItem = view.bottomNavigation?.menu?.findItem(R.id.home)
         menuItem?.isChecked = true
+    }
+
+    fun getProfileDetails() {
+        getRepositories?.getProfileDetails(getSessionManager?.getToken()!!, object :
+            RetrofitService.ResultHandler<ProfileDetailsResponse> {
+            override fun onSuccess(data: ProfileDetailsResponse?) {}
+            override fun onFailed(message: String) {}
+            override fun onError(error: ProfileDetailsResponse?) {
+                if (!checkIfAuthenticated(error?.message.toString())) {
+                    signOutExpired(view.context(), getSessionManager)
+                    view.activity().finish()
+                }
+            }
+        })
     }
 
     interface View : AbstractView{

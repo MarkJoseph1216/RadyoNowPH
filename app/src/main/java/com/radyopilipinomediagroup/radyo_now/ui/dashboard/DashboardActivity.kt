@@ -129,6 +129,7 @@ class DashboardActivity : AppCompatActivity(), AbstractPresenter.ContextView<Das
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         presenter?.getAds()
         presenter?.setNotifications()
+        presenter?.getProfileDetails()
     }
 
     fun handleNotification(intent: Intent){
